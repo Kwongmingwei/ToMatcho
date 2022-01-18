@@ -23,6 +23,7 @@
 		B447E8E327968A570000E862 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B447E8E227968A570000E862 /* GoogleService-Info.plist */; };
 		B447E8E527968D190000E862 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447E8E427968D190000E862 /* LoginViewController.swift */; };
 		B447E8E727968E840000E862 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447E8E627968E840000E862 /* RegisterViewController.swift */; };
+		B447E8E92796B5FF0000E862 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447E8E82796B5FF0000E862 /* TestViewController.swift */; };
 		BE7F2E4FC29E345A96BBA1DB /* Pods_ToMatcho.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C408929A75163A335E0516C0 /* Pods_ToMatcho.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		B447E8E227968A570000E862 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B447E8E427968D190000E862 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B447E8E627968E840000E862 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		B447E8E82796B5FF0000E862 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		C408929A75163A335E0516C0 /* Pods_ToMatcho.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToMatcho.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C62455C13182D9AC930121A3 /* Pods-ToMatchoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToMatchoTests.debug.xcconfig"; path = "Target Support Files/Pods-ToMatchoTests/Pods-ToMatchoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C9913210CB618053E0B794BD /* Pods-ToMatchoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToMatchoTests.release.xcconfig"; path = "Target Support Files/Pods-ToMatchoTests/Pods-ToMatchoTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				B447E8E427968D190000E862 /* LoginViewController.swift */,
 				B447E8E627968E840000E862 /* RegisterViewController.swift */,
 				B4311EC027911D6F000EC348 /* Main.storyboard */,
+				B447E8E82796B5FF0000E862 /* TestViewController.swift */,
 				1D7C28FC279150470040588E /* ToMatcho.storyboard */,
 				B4311EC627911D71000EC348 /* Assets.xcassets */,
 				B447E8E227968A570000E862 /* GoogleService-Info.plist */,
@@ -423,6 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B447E8E92796B5FF0000E862 /* TestViewController.swift in Sources */,
 				B4311EC527911D6F000EC348 /* ToMatcho.xcdatamodeld in Sources */,
 				B4311EBF27911D6F000EC348 /* ViewController.swift in Sources */,
 				B4311EBB27911D6F000EC348 /* AppDelegate.swift in Sources */,

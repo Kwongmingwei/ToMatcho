@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ial-uP-bS4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -148,6 +147,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="245" y="-1059"/>
+        </scene>
+        <!--Test View Controller-->
+        <scene sceneID="JjB-Gf-wYr">
+            <objects>
+                <viewController storyboardIdentifier="TestLoggedIn" id="h59-PI-th4" customClass="TestViewController" customModule="ToMatcho" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RM6-7V-S2a">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logged in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OoG-ox-fe7">
+                                <rect key="frame" x="40" y="144" width="334" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="niq-jS-mBo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OoG-ox-fe7" firstAttribute="leading" secondItem="niq-jS-mBo" secondAttribute="leading" constant="40" id="60F-t8-jft"/>
+                            <constraint firstItem="niq-jS-mBo" firstAttribute="trailing" secondItem="OoG-ox-fe7" secondAttribute="trailing" constant="40" id="V5c-pE-Ktr"/>
+                            <constraint firstItem="OoG-ox-fe7" firstAttribute="top" secondItem="niq-jS-mBo" secondAttribute="top" constant="100" id="fQP-F8-JEU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eEg-Mc-Ey6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1053" y="-1209"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="YEo-Ce-xfv">

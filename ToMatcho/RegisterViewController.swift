@@ -39,11 +39,11 @@ class RegisterViewController: UIViewController {
                             
                         }
                         else{
-                            let storyboard=UIStoryboard(name: "ToMatcho", bundle: nil)
+                            /*let storyboard=UIStoryboard(name: "ToMatcho", bundle: nil)
                             let vc=storyboard.instantiateViewController(withIdentifier: "GameTVC") as UIViewController
-                            self.view.window?.rootViewController=vc
+                            //self.view.window?.rootViewController=vc
                             vc.modalPresentationStyle = .fullScreen
-                            self.present(vc,animated:true,completion: nil)
+                            self.present(vc,animated:true,completion: nil)*/
                         }
                     })
                     

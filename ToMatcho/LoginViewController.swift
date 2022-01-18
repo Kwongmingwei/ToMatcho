@@ -7,6 +7,7 @@
 
 import UIKit
 import Foundation
+import Firebase
 
 class LoginViewController: UIViewController {
 
@@ -21,6 +22,18 @@ class LoginViewController: UIViewController {
     }
     @IBAction func loginBtn(_ sender: Any) {
         
+        Auth.auth().signIn(withEmail: emailFld.text!, password: pwdFld.text!, completion: {(result,error) in
+            if error != nil{
+                
+            }
+            else{
+                let storyboard=UIStoryboard(name: "Main", bundle: nil)
+                let vc=storyboard.instantiateViewController(withIdentifier: "TestLoggedIn") as UIViewController
+                self.view.window?.rootViewController=vc
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc,animated:true,completion: nil)
+            }
+        })
     }
     
     
