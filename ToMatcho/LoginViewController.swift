@@ -10,6 +10,9 @@ import Foundation
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var emailFld: UITextField!
+    @IBOutlet weak var pwdFld: UITextField!
+    @IBOutlet weak var loginBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -17,13 +20,8 @@ class LoginViewController: UIViewController {
     
     }
     @IBAction func loginBtn(_ sender: Any) {
+        
     }
     
-    @IBAction func registerBtn(_ sender: Any) {
-        let storyboard=UIStoryboard(name: "Main", bundle: nil)
-        let vc=storyboard.instantiateViewController(withIdentifier: "Register") as UIViewController
-        vc.modalPresentationStyle = .fullScreen
-        present(vc,animated:true,completion: nil)
-    }
     
 }
