@@ -1,13 +1,14 @@
 //
-//  ViewController.swift
+//  RegisterViewController.swift
 //  ToMatcho
 //
-//  Created by Kwong Ming Wei on 14/1/22.
+//  Created by Kwong Ming Wei on 18/1/22.
 //
 
 import UIKit
+import Foundation
 
-class ViewController: UIViewController {
+class RegisterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,4 +19,3 @@ class ViewController: UIViewController {
 
 
 }
-
