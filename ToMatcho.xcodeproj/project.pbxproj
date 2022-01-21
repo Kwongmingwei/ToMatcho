@@ -10,6 +10,7 @@
 		1D7C28FD279150470040588E /* ToMatcho.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D7C28FC279150470040588E /* ToMatcho.storyboard */; };
 		64A67CEB4650583E82376F0D /* Pods_ToMatcho_ToMatchoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC47280674CF7638F007541 /* Pods_ToMatcho_ToMatchoUITests.framework */; };
 		65E912753A8CBB9E766E6885 /* Pods_ToMatchoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F5F63DA53283E358AE705B1 /* Pods_ToMatchoTests.framework */; };
+		B40F76AD279A47CC006F5191 /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B40F76AC279A47CC006F5191 /* Admin.storyboard */; };
 		B4311EBB27911D6F000EC348 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4311EBA27911D6F000EC348 /* AppDelegate.swift */; };
 		B4311EBD27911D6F000EC348 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4311EBC27911D6F000EC348 /* SceneDelegate.swift */; };
 		B4311EBF27911D6F000EC348 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4311EBE27911D6F000EC348 /* ViewController.swift */; };
@@ -52,6 +53,7 @@
 		4BC47280674CF7638F007541 /* Pods_ToMatcho_ToMatchoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToMatcho_ToMatchoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E12D7A388ACFE7FBDA82164 /* Pods-ToMatcho.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToMatcho.release.xcconfig"; path = "Target Support Files/Pods-ToMatcho/Pods-ToMatcho.release.xcconfig"; sourceTree = "<group>"; };
 		8AEB0B32446F49A82FE51282 /* Pods-ToMatcho-ToMatchoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToMatcho-ToMatchoUITests.release.xcconfig"; path = "Target Support Files/Pods-ToMatcho-ToMatchoUITests/Pods-ToMatcho-ToMatchoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B40F76AC279A47CC006F5191 /* Admin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Admin.storyboard; sourceTree = "<group>"; };
 		B4311EB727911D6F000EC348 /* ToMatcho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToMatcho.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4311EBA27911D6F000EC348 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4311EBC27911D6F000EC348 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,8 +159,9 @@
 				B447E8E427968D190000E862 /* LoginViewController.swift */,
 				B447E8E627968E840000E862 /* RegisterViewController.swift */,
 				B4311EC027911D6F000EC348 /* Main.storyboard */,
-				B447E8E82796B5FF0000E862 /* TestViewController.swift */,
+				B40F76AC279A47CC006F5191 /* Admin.storyboard */,
 				1D7C28FC279150470040588E /* ToMatcho.storyboard */,
+				B447E8E82796B5FF0000E862 /* TestViewController.swift */,
 				B4311EC627911D71000EC348 /* Assets.xcassets */,
 				B447E8E227968A570000E862 /* GoogleService-Info.plist */,
 				B4311EC827911D71000EC348 /* LaunchScreen.storyboard */,
@@ -298,6 +301,7 @@
 				1D7C28FD279150470040588E /* ToMatcho.storyboard in Resources */,
 				B447E8E327968A570000E862 /* GoogleService-Info.plist in Resources */,
 				B4311EC727911D71000EC348 /* Assets.xcassets in Resources */,
+				B40F76AD279A47CC006F5191 /* Admin.storyboard in Resources */,
 				B4311EC227911D6F000EC348 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

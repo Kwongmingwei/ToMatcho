@@ -41,9 +41,10 @@ class RegisterViewController: UIViewController {
                 else{
                     //TRY CHECK FOR USERNAME EXIST OR SMTH
                     let db = Firestore.firestore()
-                    db.collection("users").addDocument(data: ["name":self.usrNameFld.text!,"uid":result!.user.uid], completion: {(error) in
+                    
+                    db.collection("users").document(result!.user.uid).setData(["name":self.usrNameFld.text!,"access":"user"],completion: {(error) in
                         if error != nil{
-                            let alertView = UIAlertController(title: "Unsuccessful registration", message: "Error: "+err!.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+                            let alertView = UIAlertController(title: "Unsuccessful registration", message: "Error: "+error!.localizedDescription, preferredStyle: UIAlertController.Style.alert)
                             alertView.addAction(UIAlertAction(title: "Try again", style: UIAlertAction.Style.default, handler: { _ in
                                 /*self.emailFld.text=""
                                 self.pwdFld.text=""
@@ -62,6 +63,34 @@ class RegisterViewController: UIViewController {
                             self.present(alertView,animated: false,completion: nil)
                         }
                     })
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    /*db.collection("users").addDocument(data: ["name":self.usrNameFld.text!,"uid":result!.user.uid], completion: {(error) in
+                        if error != nil{
+                            let alertView = UIAlertController(title: "Unsuccessful registration", message: "Error: "+error!.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+                            alertView.addAction(UIAlertAction(title: "Try again", style: UIAlertAction.Style.default, handler: { _ in
+                                /*self.emailFld.text=""
+                                self.pwdFld.text=""
+                                self.pwdFld2.text=""*/
+                            }))
+                            self.present(alertView,animated: false,completion: nil)
+                        }
+                        else{
+                            let alertView = UIAlertController(title: "Registration successful", message: "Registration successful, return to login screen to log in", preferredStyle: UIAlertController.Style.alert)
+                            alertView.addAction(UIAlertAction(title: "Return to Login", style: UIAlertAction.Style.default, handler: { _ in
+                                let storyboard=UIStoryboard(name: "Main", bundle: nil)
+                                let vc=storyboard.instantiateViewController(withIdentifier: "LoginVC") as UIViewController
+                                vc.modalPresentationStyle = .fullScreen
+                                self.present(vc,animated:true,completion: nil)
+                            }))
+                            self.present(alertView,animated: false,completion: nil)
+                        }
+                    })*/
                     
                 }
             })

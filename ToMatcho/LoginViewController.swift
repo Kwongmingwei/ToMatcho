@@ -21,7 +21,6 @@ class LoginViewController: UIViewController {
     
     }
     @IBAction func loginBtn(_ sender: Any) {
-        
         Auth.auth().signIn(withEmail: emailFld.text!, password: pwdFld.text!, completion: {(result,error) in
             if error != nil{
                 let alertView = UIAlertController(title: "Unsuccessful login", message: "Error: "+error!.localizedDescription, preferredStyle: UIAlertController.Style.alert)
@@ -31,11 +30,33 @@ class LoginViewController: UIViewController {
                 self.present(alertView,animated: false,completion: nil)
             }
             else{
-                let storyboard=UIStoryboard(name: "Main", bundle: nil)
-                let vc=storyboard.instantiateViewController(withIdentifier: "TestLoggedIn") as UIViewController
-                self.view.window?.rootViewController=vc
-                vc.modalPresentationStyle = .fullScreen
-                self.present(vc,animated:true,completion: nil)
+                let db=Database.database().reference()
+                let uid = Auth.auth().currentUser?.uid
+                db.child("users").child(uid!).child("access")
+                
+                let docRef = Firestore.firestore().collection("users").document(uid!)
+                docRef.getDocument{(doc,error) in
+                if error == nil{
+                    let access=doc!.get("access") as! String
+                    print("Access= "+access)
+                    if access == "user"{
+                        let storyboard=UIStoryboard(name: "Main", bundle: nil)
+                        let vc=storyboard.instantiateViewController(withIdentifier: "TestLoggedIn") as UIViewController
+                        self.view.window?.rootViewController=vc
+                        vc.modalPresentationStyle = .fullScreen
+                        self.present(vc,animated:true,completion: nil)
+                    }
+                    else if access=="admin"{
+                        let storyboard=UIStoryboard(name: "Admin", bundle: nil)
+                        let vc=storyboard.instantiateViewController(withIdentifier: "AdminTBC") as UIViewController
+                        self.view.window?.rootViewController=vc
+                        vc.modalPresentationStyle = .fullScreen
+                        self.present(vc,animated:true,completion: nil)
+                    }
+                }
+                }
+                
+                
             }
         })
     }
