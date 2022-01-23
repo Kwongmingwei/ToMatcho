@@ -30,10 +30,11 @@ class LoginViewController: UIViewController {
                 self.present(alertView,animated: false,completion: nil)
             }
             else{
-                let db=Database.database().reference()
+                /*let db=Database.database().reference()
                 let uid = Auth.auth().currentUser?.uid
-                db.child("users").child(uid!).child("access")
+                db.child("users").child(uid!).child("access")*/
                 
+                let uid = Auth.auth().currentUser?.uid
                 let docRef = Firestore.firestore().collection("users").document(uid!)
                 docRef.getDocument{(doc,error) in
                 if error == nil{
