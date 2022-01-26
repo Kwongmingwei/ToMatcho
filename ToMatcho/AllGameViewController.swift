@@ -11,19 +11,25 @@ import Firebase
 import FirebaseFirestore
 
 class AllGameViewController: UITableViewController {
-    var gameList:[Game]=[]
+    var appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    //var gameList:[Game]=[]
     
     func loadData(){
-        gameList.removeAll()
         Firestore.firestore().collection("games").getDocuments() {(querySnapshot,err) in
             if err == nil{
+                print("b4 gamelist count:"+String(self.appDelegate.gameList.count))
+                //self.gameList.removeAll()
+                self.appDelegate.gameList.removeAll()
                 for document in querySnapshot!.documents{
                     let docId=document.documentID
                     let gamename=document.get("name") as! String
-                    self.gameList.append(Game(gamename: gamename, gameId: docId))
+                    let developer=document.get("developer") as! String
+                    //self.gameList.append(Game(gamename: gamename, gameId: docId,gameDev: developer))
+                    self.appDelegate.gameList.append(Game(gamename: gamename, gameId: docId,gameDev: developer))
                 }
             }
-            print("gamelist count:"+String(self.gameList.count))
+            print("gamelist count:"+String(self.appDelegate.gameList.count))
             self.tableView.reloadData()
         }
     }
@@ -31,6 +37,7 @@ class AllGameViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
+        tableView.reloadData()
     }
     
     
@@ -39,13 +46,14 @@ class AllGameViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(gameList.count)
-        return gameList.count
+        return appDelegate.gameList.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell=self.tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath)
-        let game=gameList[indexPath.row]
+        let game=appDelegate.gameList[indexPath.row]
         cell.textLabel!.text = "\(game.gameName)"
+        print("gamelist count:"+game.gameName)
+        print("gamelist count:"+game.gameid)
         cell.detailTextLabel!.text = "\(game.gameid)"
         return cell
     }
@@ -56,5 +64,11 @@ class AllGameViewController: UITableViewController {
         }
     }
     
+    @IBAction func addBtn(_ sender: Any) {
+        let storyboard=UIStoryboard(name: "Admin", bundle: nil)
+        let vc=storyboard.instantiateViewController(withIdentifier: "AddGame") as UIViewController
+        vc.modalPresentationStyle = .fullScreen
+        present(vc,animated:true,completion: nil)
+    }
     
 }

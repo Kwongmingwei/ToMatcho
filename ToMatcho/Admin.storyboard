@@ -27,7 +27,7 @@
         <!--All Games-->
         <scene sceneID="IJc-wZ-mMv">
             <objects>
-                <tableViewController id="434-mh-jqz" customClass="AllGameViewController" customModule="ToMatcho" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="AllGame" id="434-mh-jqz" customClass="AllGameViewController" customModule="ToMatcho" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="eVI-Hc-Ly0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,11 +63,108 @@
                             <outlet property="delegate" destination="434-mh-jqz" id="ydL-44-o1l"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="All Games" id="u2I-Ul-JgV"/>
+                    <navigationItem key="navigationItem" title="All Games" id="u2I-Ul-JgV">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="T4Q-3R-1le">
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="addBtn:" destination="434-mh-jqz" id="hKJ-09-bmd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Op-Hm-VLA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-287" y="-21"/>
+        </scene>
+        <!--Add Game View Controller-->
+        <scene sceneID="YzP-91-e8I">
+            <objects>
+                <viewController storyboardIdentifier="AddGame" id="FKh-TD-qZZ" customClass="AddGameViewController" customModule="ToMatcho" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="atc-3i-RaL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="4w7-6K-Q5d">
+                                <rect key="frame" x="20" y="144" width="374" height="421.5"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Game Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j40-YN-1k2">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="REs-2E-dyF"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Game Developer" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="00O-7E-nGS">
+                                        <rect key="frame" x="0.0" y="60" width="374" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="awS-P3-h3z"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ozv-E2-5f8">
+                                        <rect key="frame" x="0.0" y="120" width="374" height="240.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age Rating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pon-pR-BYe">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="25.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wQ7-oK-xAB">
+                                                <rect key="frame" x="0.0" y="40.5" width="374" height="200"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="6Ah-mx-hGK"/>
+                                                </constraints>
+                                            </pickerView>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8HQ-qf-dfd">
+                                        <rect key="frame" x="0.0" y="390.5" width="374" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Add"/>
+                                        <connections>
+                                            <action selector="addGameBtn:" destination="FKh-TD-qZZ" eventType="touchUpInside" id="hhl-qi-x5P"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ozv-E2-5f8" firstAttribute="leading" secondItem="4w7-6K-Q5d" secondAttribute="leading" constant="10" id="TbB-D7-T1m"/>
+                                    <constraint firstItem="ozv-E2-5f8" firstAttribute="top" secondItem="00O-7E-nGS" secondAttribute="bottom" constant="10" id="Xpu-TK-oJP"/>
+                                    <constraint firstAttribute="trailing" secondItem="ozv-E2-5f8" secondAttribute="trailing" constant="10" id="uWZ-4r-9p4"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2KE-B8-nzT">
+                                <rect key="frame" x="10" y="54" width="68" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system" title="Back"/>
+                                <connections>
+                                    <action selector="backbtn:" destination="FKh-TD-qZZ" eventType="touchUpInside" id="mA4-jf-R2H"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="e8K-41-1We"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstItem="e8K-41-1We" firstAttribute="trailing" secondItem="4w7-6K-Q5d" secondAttribute="trailing" constant="20" id="1Wt-f0-MEp"/>
+                            <constraint firstItem="4w7-6K-Q5d" firstAttribute="top" secondItem="e8K-41-1We" secondAttribute="top" constant="100" id="aTj-yo-Uqh"/>
+                            <constraint firstItem="2KE-B8-nzT" firstAttribute="leading" secondItem="e8K-41-1We" secondAttribute="leading" constant="10" id="rly-gb-qd3"/>
+                            <constraint firstItem="2KE-B8-nzT" firstAttribute="top" secondItem="e8K-41-1We" secondAttribute="top" constant="10" id="ukN-Sl-Tfe"/>
+                            <constraint firstItem="4w7-6K-Q5d" firstAttribute="leading" secondItem="e8K-41-1We" secondAttribute="leading" constant="20" id="vtM-L9-lPx"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="pvAgeRate" destination="wQ7-oK-xAB" id="aV3-Td-C3G"/>
+                        <outlet property="txtGDev" destination="00O-7E-nGS" id="mPX-8v-ILd"/>
+                        <outlet property="txtGName" destination="j40-YN-1k2" id="RYV-EV-7wl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bnL-bi-Ufa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="695" y="4"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="aHf-OV-4jH">
@@ -86,11 +183,11 @@
             </objects>
             <point key="canvasLocation" x="-2531" y="-21"/>
         </scene>
-        <!--Item-->
+        <!--All Games-->
         <scene sceneID="s2R-g3-3LE">
             <objects>
                 <navigationController id="Ukb-wM-351" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="8c7-YO-OSh"/>
+                    <tabBarItem key="tabBarItem" title="All Games" selectedImage="list.triangle" catalog="system" id="8c7-YO-OSh"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HZ7-2t-WAn">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -105,8 +202,16 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
+        <image name="list.triangle" catalog="system" width="128" height="91"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

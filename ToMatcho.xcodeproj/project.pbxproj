@@ -11,6 +11,7 @@
 		64A67CEB4650583E82376F0D /* Pods_ToMatcho_ToMatchoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC47280674CF7638F007541 /* Pods_ToMatcho_ToMatchoUITests.framework */; };
 		65E912753A8CBB9E766E6885 /* Pods_ToMatchoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F5F63DA53283E358AE705B1 /* Pods_ToMatchoTests.framework */; };
 		B40F76AD279A47CC006F5191 /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B40F76AC279A47CC006F5191 /* Admin.storyboard */; };
+		B42894B127A0F43600FB8403 /* AddGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42894B027A0F43600FB8403 /* AddGameViewController.swift */; };
 		B4311EBB27911D6F000EC348 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4311EBA27911D6F000EC348 /* AppDelegate.swift */; };
 		B4311EBD27911D6F000EC348 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4311EBC27911D6F000EC348 /* SceneDelegate.swift */; };
 		B4311EBF27911D6F000EC348 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4311EBE27911D6F000EC348 /* ViewController.swift */; };
@@ -18,9 +19,6 @@
 		B4311EC527911D6F000EC348 /* ToMatcho.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B4311EC327911D6F000EC348 /* ToMatcho.xcdatamodeld */; };
 		B4311EC727911D71000EC348 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4311EC627911D71000EC348 /* Assets.xcassets */; };
 		B4311ECA27911D71000EC348 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4311EC827911D71000EC348 /* LaunchScreen.storyboard */; };
-		B4311ED527911D72000EC348 /* ToMatchoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4311ED427911D72000EC348 /* ToMatchoTests.swift */; };
-		B4311EDF27911D72000EC348 /* ToMatchoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4311EDE27911D72000EC348 /* ToMatchoUITests.swift */; };
-		B4311EE127911D72000EC348 /* ToMatchoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4311EE027911D72000EC348 /* ToMatchoUITestsLaunchTests.swift */; };
 		B43E934E279D2105006DE37C /* AllGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43E934D279D2105006DE37C /* AllGameViewController.swift */; };
 		B43E9350279D2950006DE37C /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43E934F279D2950006DE37C /* Game.swift */; };
 		B447E8E327968A570000E862 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B447E8E227968A570000E862 /* GoogleService-Info.plist */; };
@@ -56,6 +54,7 @@
 		6E12D7A388ACFE7FBDA82164 /* Pods-ToMatcho.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToMatcho.release.xcconfig"; path = "Target Support Files/Pods-ToMatcho/Pods-ToMatcho.release.xcconfig"; sourceTree = "<group>"; };
 		8AEB0B32446F49A82FE51282 /* Pods-ToMatcho-ToMatchoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToMatcho-ToMatchoUITests.release.xcconfig"; path = "Target Support Files/Pods-ToMatcho-ToMatchoUITests/Pods-ToMatcho-ToMatchoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B40F76AC279A47CC006F5191 /* Admin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Admin.storyboard; sourceTree = "<group>"; };
+		B42894B027A0F43600FB8403 /* AddGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGameViewController.swift; sourceTree = "<group>"; };
 		B4311EB727911D6F000EC348 /* ToMatcho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToMatcho.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4311EBA27911D6F000EC348 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4311EBC27911D6F000EC348 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,10 +65,7 @@
 		B4311EC927911D71000EC348 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4311ECB27911D71000EC348 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4311ED027911D72000EC348 /* ToMatchoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToMatchoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B4311ED427911D72000EC348 /* ToMatchoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToMatchoTests.swift; sourceTree = "<group>"; };
 		B4311EDA27911D72000EC348 /* ToMatchoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToMatchoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B4311EDE27911D72000EC348 /* ToMatchoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToMatchoUITests.swift; sourceTree = "<group>"; };
-		B4311EE027911D72000EC348 /* ToMatchoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToMatchoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B43E934D279D2105006DE37C /* AllGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGameViewController.swift; sourceTree = "<group>"; };
 		B43E934F279D2950006DE37C /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		B447E8E227968A570000E862 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -136,8 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				B4311EB927911D6F000EC348 /* ToMatcho */,
-				B4311ED327911D72000EC348 /* ToMatchoTests */,
-				B4311EDD27911D72000EC348 /* ToMatchoUITests */,
 				B4311EB827911D6F000EC348 /* Products */,
 				5C7E814C91BABAD1AFC8C2DA /* Pods */,
 				54FD035077816587FB7CF136 /* Frameworks */,
@@ -159,6 +153,7 @@
 			children = (
 				B4311EBA27911D6F000EC348 /* AppDelegate.swift */,
 				B4311EBC27911D6F000EC348 /* SceneDelegate.swift */,
+				B42894B027A0F43600FB8403 /* AddGameViewController.swift */,
 				B43E934D279D2105006DE37C /* AllGameViewController.swift */,
 				B43E934F279D2950006DE37C /* Game.swift */,
 				B4311EBE27911D6F000EC348 /* ViewController.swift */,
@@ -175,23 +170,6 @@
 				B4311EC327911D6F000EC348 /* ToMatcho.xcdatamodeld */,
 			);
 			path = ToMatcho;
-			sourceTree = "<group>";
-		};
-		B4311ED327911D72000EC348 /* ToMatchoTests */ = {
-			isa = PBXGroup;
-			children = (
-				B4311ED427911D72000EC348 /* ToMatchoTests.swift */,
-			);
-			path = ToMatchoTests;
-			sourceTree = "<group>";
-		};
-		B4311EDD27911D72000EC348 /* ToMatchoUITests */ = {
-			isa = PBXGroup;
-			children = (
-				B4311EDE27911D72000EC348 /* ToMatchoUITests.swift */,
-				B4311EE027911D72000EC348 /* ToMatchoUITestsLaunchTests.swift */,
-			);
-			path = ToMatchoUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -436,6 +414,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B42894B127A0F43600FB8403 /* AddGameViewController.swift in Sources */,
 				B43E934E279D2105006DE37C /* AllGameViewController.swift in Sources */,
 				B43E9350279D2950006DE37C /* Game.swift in Sources */,
 				B447E8E92796B5FF0000E862 /* TestViewController.swift in Sources */,
@@ -452,7 +431,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4311ED527911D72000EC348 /* ToMatchoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,8 +438,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4311EE127911D72000EC348 /* ToMatchoUITestsLaunchTests.swift in Sources */,
-				B4311EDF27911D72000EC348 /* ToMatchoUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

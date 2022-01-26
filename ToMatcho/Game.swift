@@ -10,9 +10,11 @@ import Foundation
 class Game{
     var gameName:String
     var gameid:String
+    var gamedev:String
     
-    init(gamename:String,gameId:String) {
+    init(gamename:String,gameId:String,gameDev:String) {
         gameName=gamename
         gameid=gameId
+        gamedev=gameDev
     }
 }
