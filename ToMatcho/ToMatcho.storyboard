@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yuE-nC-ve2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yuE-nC-ve2">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -135,38 +135,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="csO-lh-lDY">
-                                <rect key="frame" x="40" y="351" width="334" height="355"/>
-                                <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xVw-3t-AMq">
-                                        <rect key="frame" x="2" y="8" width="332" height="339"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="dIp-HB-nnP" style="IBUITableViewCellStyleDefault" id="jfg-9l-72z">
-                                                <rect key="frame" x="0.0" y="44.5" width="332" height="43.5"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jfg-9l-72z" id="7GR-eR-24A">
-                                                    <rect key="frame" x="0.0" y="0.0" width="332" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dIp-HB-nnP">
-                                                            <rect key="frame" x="20" y="0.0" width="292" height="43.5"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                            <accessibility key="accessibilityConfiguration" identifier="TeamRoleCell"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </tableViewCellContentView>
-                                            </tableViewCell>
-                                        </prototypes>
-                                    </tableView>
-                                </subviews>
-                                <viewLayoutGuide key="contentLayoutGuide" id="gQg-kp-GNM"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="lOD-Wo-eIa"/>
-                            </scrollView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Team Description" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g8Q-EA-Rzf">
                                 <rect key="frame" x="40" y="254" width="334" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -189,6 +157,23 @@
                                     <action selector="addGameBtn:" destination="1ZO-7Q-UFA" eventType="touchUpInside" id="CWW-cQ-9db"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="xRa-s2-ntJ">
+                                <rect key="frame" x="10" y="384" width="394" height="319"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="PEY-Tm-u6s"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="roleCell" id="DE6-qj-SGa">
+                                        <rect key="frame" x="0.0" y="44.5" width="394" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DE6-qj-SGa" id="cvl-JV-HbM">
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rTy-1E-ydy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -198,15 +183,14 @@
                             <constraint firstItem="rTy-1E-ydy" firstAttribute="trailing" secondItem="aPm-0d-Ppg" secondAttribute="trailing" constant="40" id="7Ve-CT-8uT"/>
                             <constraint firstItem="aPm-0d-Ppg" firstAttribute="leading" secondItem="rTy-1E-ydy" secondAttribute="leading" constant="40" id="9in-04-gra"/>
                             <constraint firstItem="ERq-ID-ufF" firstAttribute="top" secondItem="iUJ-ph-hyD" secondAttribute="bottom" constant="20" id="Dd5-Yu-0Pt"/>
-                            <constraint firstItem="csO-lh-lDY" firstAttribute="top" secondItem="n0w-OO-1Xu" secondAttribute="bottom" constant="20" id="FQl-EJ-Cat"/>
                             <constraint firstItem="rTy-1E-ydy" firstAttribute="trailing" secondItem="iUJ-ph-hyD" secondAttribute="trailing" constant="40" id="KFZ-qb-piO"/>
-                            <constraint firstItem="rTy-1E-ydy" firstAttribute="trailing" secondItem="csO-lh-lDY" secondAttribute="trailing" constant="40" id="Kza-uG-3zp"/>
                             <constraint firstItem="rTy-1E-ydy" firstAttribute="trailing" secondItem="ERq-ID-ufF" secondAttribute="trailing" constant="40" id="MHC-In-8kf"/>
                             <constraint firstItem="XAQ-4e-bFq" firstAttribute="leading" secondItem="rTy-1E-ydy" secondAttribute="leading" constant="40" id="NdF-ti-dT5"/>
                             <constraint firstItem="rTy-1E-ydy" firstAttribute="trailing" secondItem="XAQ-4e-bFq" secondAttribute="trailing" constant="40" id="Pe0-Rl-9UO"/>
                             <constraint firstItem="g8Q-EA-Rzf" firstAttribute="leading" secondItem="rTy-1E-ydy" secondAttribute="leading" constant="40" id="Sct-Pw-Wk4"/>
+                            <constraint firstItem="xRa-s2-ntJ" firstAttribute="leading" secondItem="rTy-1E-ydy" secondAttribute="leading" constant="10" id="Zsb-wO-3aO"/>
                             <constraint firstItem="iUJ-ph-hyD" firstAttribute="top" secondItem="rTy-1E-ydy" secondAttribute="top" constant="30" id="a1P-0G-CaS"/>
-                            <constraint firstItem="csO-lh-lDY" firstAttribute="leading" secondItem="rTy-1E-ydy" secondAttribute="leading" constant="40" id="dhW-H8-M2K"/>
+                            <constraint firstItem="rTy-1E-ydy" firstAttribute="trailing" secondItem="xRa-s2-ntJ" secondAttribute="trailing" constant="10" id="bvI-pd-FCk"/>
                             <constraint firstItem="iUJ-ph-hyD" firstAttribute="top" secondItem="rTy-1E-ydy" secondAttribute="top" constant="30" id="gnt-NR-1H9"/>
                             <constraint firstItem="iUJ-ph-hyD" firstAttribute="leading" secondItem="rTy-1E-ydy" secondAttribute="leading" constant="40" id="hwz-Oz-UHZ"/>
                             <constraint firstItem="rTy-1E-ydy" firstAttribute="trailing" secondItem="n0w-OO-1Xu" secondAttribute="trailing" constant="40" id="idA-dQ-KJu"/>
@@ -221,6 +205,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Create Team" id="qm3-RZ-T5n"/>
                     <connections>
+                        <outlet property="roleTV" destination="xRa-s2-ntJ" id="xH0-xE-aCR"/>
                         <outlet property="txtTeamDescription" destination="g8Q-EA-Rzf" id="5Hx-vE-FyZ"/>
                         <outlet property="txtTeamName" destination="ERq-ID-ufF" id="D06-ba-Eqr"/>
                     </connections>

@@ -11,7 +11,16 @@ import Firebase
 import FirebaseAuth
 import FirebaseFirestore
 
-class AddTeamViewController: UIViewController{
+class AddTeamViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
+    
+    
+    @IBOutlet weak var roleTV: UITableView!
+    
+    var roles:[String]=["Tank","Fighter","Marksman"]
+    
+    
+    
+    
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     @IBOutlet weak var txtTeamName: UITextField!
@@ -19,7 +28,28 @@ class AddTeamViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        roleTV.delegate=self
+        roleTV.dataSource=self
+        roleTV.reloadData()
         // Do any additional setup after loading the view.
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        print("1")
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("2")
+        return roles.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell=UITableViewCell()
+        print("3")
+        cell = tableView.dequeueReusableCell(withIdentifier: "roleCell", for: indexPath)
+        cell.textLabel!.text=roles[indexPath.row]
+        return cell
     }
     
    /* @IBOutlet weak var pvAgeRate: UIPickerView!
