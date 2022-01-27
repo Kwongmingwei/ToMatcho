@@ -41,8 +41,8 @@ class LoginViewController: UIViewController {
                     let access=doc!.get("access") as! String
                     print("Access= "+access)
                     if access == "user"{
-                        let storyboard=UIStoryboard(name: "Main", bundle: nil)
-                        let vc=storyboard.instantiateViewController(withIdentifier: "TestLoggedIn") as UIViewController
+                        let storyboard=UIStoryboard(name: "ToMatcho", bundle: nil)
+                        let vc=storyboard.instantiateViewController(withIdentifier: "ToMatchoMain") as UIViewController
                         self.view.window?.rootViewController=vc
                         vc.modalPresentationStyle = .fullScreen
                         self.present(vc,animated:true,completion: nil)

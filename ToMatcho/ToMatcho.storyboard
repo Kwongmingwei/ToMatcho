@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yuE-nC-ve2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yuE-nC-ve2">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,7 +26,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="fKD-gF-szu">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="yuE-nC-ve2" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="ToMatchoMain" automaticallyAdjustsScrollViewInsets="NO" id="yuE-nC-ve2" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BpO-4R-OOe">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -63,13 +63,13 @@
         <!--Games-->
         <scene sceneID="LSn-Ah-iL5">
             <objects>
-                <tableViewController storyboardIdentifier="GameTVC" id="FRC-is-0sl" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="GameTVC" id="FRC-is-0sl" customClass="UserAllGameViewController" customModule="ToMatcho" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Rmj-VP-IKr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="Zru-kr-ezj" style="IBUITableViewCellStyleDefault" id="4Yn-5s-Waj">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserGameCell" textLabel="Zru-kr-ezj" style="IBUITableViewCellStyleDefault" id="4Yn-5s-Waj">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Yn-5s-Waj" id="bj2-af-IV7">
@@ -104,7 +104,7 @@
         <!--Create Team-->
         <scene sceneID="JF3-Bh-Pg8">
             <objects>
-                <viewController id="1ZO-7Q-UFA" sceneMemberID="viewController">
+                <viewController id="1ZO-7Q-UFA" customClass="AddTeamViewController" customModule="ToMatcho" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tlg-PB-EgL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -113,20 +113,23 @@
                                 <rect key="frame" x="40" y="159" width="334" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="txtTeamName:" destination="u8N-Lj-PFk" eventType="editingDidEnd" id="1gy-hP-Eth"/>
+                                </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Team Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUJ-ph-hyD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUJ-ph-hyD">
                                 <rect key="frame" x="40" y="118" width="334" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Team Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPm-0d-Ppg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPm-0d-Ppg">
                                 <rect key="frame" x="40" y="213" width="334" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Team Roles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0w-OO-1Xu">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Roles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0w-OO-1Xu">
                                 <rect key="frame" x="40" y="308" width="334" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -150,6 +153,7 @@
                                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dIp-HB-nnP">
                                                             <rect key="frame" x="20" y="0.0" width="292" height="43.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
+                                                            <accessibility key="accessibilityConfiguration" identifier="TeamRoleCell"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -181,14 +185,21 @@
                                 <rect key="frame" x="40" y="742" width="334" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Create Team"/>
+                                <connections>
+                                    <action selector="addGameBtn:" destination="1ZO-7Q-UFA" eventType="touchUpInside" id="CWW-cQ-9db"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rTy-1E-ydy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="aPm-0d-Ppg" firstAttribute="top" secondItem="ERq-ID-ufF" secondAttribute="bottom" constant="20" id="1JY-XM-EPO"/>
+                            <constraint firstItem="n0w-OO-1Xu" firstAttribute="top" secondItem="g8Q-EA-Rzf" secondAttribute="bottom" constant="20" id="3oy-79-07A"/>
+                            <constraint firstItem="rTy-1E-ydy" firstAttribute="trailing" secondItem="aPm-0d-Ppg" secondAttribute="trailing" constant="40" id="7Ve-CT-8uT"/>
+                            <constraint firstItem="aPm-0d-Ppg" firstAttribute="leading" secondItem="rTy-1E-ydy" secondAttribute="leading" constant="40" id="9in-04-gra"/>
                             <constraint firstItem="ERq-ID-ufF" firstAttribute="top" secondItem="iUJ-ph-hyD" secondAttribute="bottom" constant="20" id="Dd5-Yu-0Pt"/>
                             <constraint firstItem="csO-lh-lDY" firstAttribute="top" secondItem="n0w-OO-1Xu" secondAttribute="bottom" constant="20" id="FQl-EJ-Cat"/>
+                            <constraint firstItem="rTy-1E-ydy" firstAttribute="trailing" secondItem="iUJ-ph-hyD" secondAttribute="trailing" constant="40" id="KFZ-qb-piO"/>
                             <constraint firstItem="rTy-1E-ydy" firstAttribute="trailing" secondItem="csO-lh-lDY" secondAttribute="trailing" constant="40" id="Kza-uG-3zp"/>
                             <constraint firstItem="rTy-1E-ydy" firstAttribute="trailing" secondItem="ERq-ID-ufF" secondAttribute="trailing" constant="40" id="MHC-In-8kf"/>
                             <constraint firstItem="XAQ-4e-bFq" firstAttribute="leading" secondItem="rTy-1E-ydy" secondAttribute="leading" constant="40" id="NdF-ti-dT5"/>
@@ -196,66 +207,97 @@
                             <constraint firstItem="g8Q-EA-Rzf" firstAttribute="leading" secondItem="rTy-1E-ydy" secondAttribute="leading" constant="40" id="Sct-Pw-Wk4"/>
                             <constraint firstItem="iUJ-ph-hyD" firstAttribute="top" secondItem="rTy-1E-ydy" secondAttribute="top" constant="30" id="a1P-0G-CaS"/>
                             <constraint firstItem="csO-lh-lDY" firstAttribute="leading" secondItem="rTy-1E-ydy" secondAttribute="leading" constant="40" id="dhW-H8-M2K"/>
+                            <constraint firstItem="iUJ-ph-hyD" firstAttribute="top" secondItem="rTy-1E-ydy" secondAttribute="top" constant="30" id="gnt-NR-1H9"/>
+                            <constraint firstItem="iUJ-ph-hyD" firstAttribute="leading" secondItem="rTy-1E-ydy" secondAttribute="leading" constant="40" id="hwz-Oz-UHZ"/>
+                            <constraint firstItem="rTy-1E-ydy" firstAttribute="trailing" secondItem="n0w-OO-1Xu" secondAttribute="trailing" constant="40" id="idA-dQ-KJu"/>
+                            <constraint firstItem="n0w-OO-1Xu" firstAttribute="leading" secondItem="rTy-1E-ydy" secondAttribute="leading" constant="40" id="lDy-So-l5V"/>
                             <constraint firstItem="g8Q-EA-Rzf" firstAttribute="top" secondItem="aPm-0d-Ppg" secondAttribute="bottom" constant="20" id="mOd-39-x9S"/>
                             <constraint firstItem="n0w-OO-1Xu" firstAttribute="top" secondItem="g8Q-EA-Rzf" secondAttribute="bottom" constant="20" id="rHm-W4-dvq"/>
                             <constraint firstItem="ERq-ID-ufF" firstAttribute="leading" secondItem="rTy-1E-ydy" secondAttribute="leading" constant="40" id="slY-bw-GM4"/>
                             <constraint firstItem="rTy-1E-ydy" firstAttribute="bottom" secondItem="XAQ-4e-bFq" secondAttribute="bottom" constant="40" id="v2U-t0-yya"/>
+                            <constraint firstItem="aPm-0d-Ppg" firstAttribute="top" secondItem="ERq-ID-ufF" secondAttribute="bottom" constant="20" id="xNp-SN-iFr"/>
                             <constraint firstItem="rTy-1E-ydy" firstAttribute="trailing" secondItem="g8Q-EA-Rzf" secondAttribute="trailing" constant="40" id="zaw-wB-UC9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Create Team" id="qm3-RZ-T5n"/>
+                    <connections>
+                        <outlet property="txtTeamDescription" destination="g8Q-EA-Rzf" id="5Hx-vE-FyZ"/>
+                        <outlet property="txtTeamName" destination="ERq-ID-ufF" id="D06-ba-Eqr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S2K-mc-3B0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="u8N-Lj-PFk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3873.913043478261" y="-382.36607142857139"/>
         </scene>
         <!--Create Role-->
         <scene sceneID="ghJ-Gq-wvP">
             <objects>
-                <viewController id="Ofc-0q-ydO" sceneMemberID="viewController">
+                <viewController id="Ofc-0q-ydO" customClass="AddTeamRolesViewController" customModule="ToMatcho" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BfU-WQ-6Pt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Role Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XLZ-nr-20r">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Role Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XLZ-nr-20r">
                                 <rect key="frame" x="40" y="159" width="334" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Role Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUo-z3-87V">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Role Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUo-z3-87V">
                                 <rect key="frame" x="40" y="118" width="334" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Quantity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSb-el-wgy">
-                                <rect key="frame" x="156" y="213" width="103" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quantity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSb-el-wgy">
+                                <rect key="frame" x="40" y="213" width="334" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Role Quantity" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sxc-uw-c0x">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Role Quantity" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sxc-uw-c0x">
                                 <rect key="frame" x="40" y="254" width="334" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtH-pa-wW9">
-                                <rect key="frame" x="40" y="336" width="334" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtH-pa-wW9">
+                                <rect key="frame" x="40" y="338" width="334" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Create Role"/>
+                                <connections>
+                                    <action selector="createBtn:" destination="Ofc-0q-ydO" eventType="touchUpInside" id="6rK-S2-8SE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Wk4-Yb-oOt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="dtH-pa-wW9" firstAttribute="leading" secondItem="Wk4-Yb-oOt" secondAttribute="leading" constant="40" id="4N2-OG-9R3"/>
+                            <constraint firstItem="XLZ-nr-20r" firstAttribute="top" secondItem="ZUo-z3-87V" secondAttribute="bottom" constant="20" id="4i0-d7-9YS"/>
+                            <constraint firstItem="kSb-el-wgy" firstAttribute="top" secondItem="XLZ-nr-20r" secondAttribute="bottom" constant="20" id="5yu-9h-JO4"/>
+                            <constraint firstItem="Wk4-Yb-oOt" firstAttribute="trailing" secondItem="ZUo-z3-87V" secondAttribute="trailing" constant="40" id="6zI-lb-iNp"/>
                             <constraint firstItem="kSb-el-wgy" firstAttribute="top" secondItem="XLZ-nr-20r" secondAttribute="bottom" constant="20" id="Azm-6Q-4XO"/>
+                            <constraint firstItem="Wk4-Yb-oOt" firstAttribute="trailing" secondItem="dtH-pa-wW9" secondAttribute="trailing" constant="40" id="DDz-6A-33B"/>
+                            <constraint firstItem="Sxc-uw-c0x" firstAttribute="leading" secondItem="Wk4-Yb-oOt" secondAttribute="leading" constant="40" id="EDA-fb-1al"/>
+                            <constraint firstItem="dtH-pa-wW9" firstAttribute="top" secondItem="Sxc-uw-c0x" secondAttribute="bottom" constant="50" id="GHt-VV-ick"/>
+                            <constraint firstItem="ZUo-z3-87V" firstAttribute="top" secondItem="Wk4-Yb-oOt" secondAttribute="top" constant="30" id="J0m-d8-Cs1"/>
+                            <constraint firstItem="XLZ-nr-20r" firstAttribute="leading" secondItem="Wk4-Yb-oOt" secondAttribute="leading" constant="40" id="Neh-pO-Kzk"/>
                             <constraint firstItem="Sxc-uw-c0x" firstAttribute="top" secondItem="kSb-el-wgy" secondAttribute="bottom" constant="20" id="Olp-9Z-984"/>
+                            <constraint firstItem="Sxc-uw-c0x" firstAttribute="top" secondItem="kSb-el-wgy" secondAttribute="bottom" constant="20" id="UU7-vx-vb9"/>
+                            <constraint firstItem="kSb-el-wgy" firstAttribute="leading" secondItem="Wk4-Yb-oOt" secondAttribute="leading" constant="40" id="V0g-u0-ytX"/>
+                            <constraint firstItem="ZUo-z3-87V" firstAttribute="leading" secondItem="Wk4-Yb-oOt" secondAttribute="leading" constant="40" id="W49-37-D6S"/>
+                            <constraint firstItem="Wk4-Yb-oOt" firstAttribute="trailing" secondItem="Sxc-uw-c0x" secondAttribute="trailing" constant="40" id="YiG-87-Wnq"/>
+                            <constraint firstItem="Wk4-Yb-oOt" firstAttribute="trailing" secondItem="kSb-el-wgy" secondAttribute="trailing" constant="40" id="qt9-x3-So1"/>
                             <constraint firstItem="ZUo-z3-87V" firstAttribute="top" secondItem="Wk4-Yb-oOt" secondAttribute="top" constant="30" id="vXP-fi-E3R"/>
+                            <constraint firstItem="Wk4-Yb-oOt" firstAttribute="trailing" secondItem="XLZ-nr-20r" secondAttribute="trailing" constant="40" id="xFs-fa-b9Q"/>
                             <constraint firstItem="XLZ-nr-20r" firstAttribute="top" secondItem="ZUo-z3-87V" secondAttribute="bottom" constant="20" id="yPs-TV-VTs"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Create Role" id="8Z6-ez-Wep"/>
+                    <connections>
+                        <outlet property="roleNameFld" destination="XLZ-nr-20r" id="BWm-Br-3be"/>
+                        <outlet property="roleQuantityFld" destination="Sxc-uw-c0x" id="Iy4-dD-JIn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x8F-LP-GYW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
