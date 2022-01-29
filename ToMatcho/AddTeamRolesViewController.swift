@@ -27,10 +27,10 @@ class AddTeamRolesViewController: UIViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         /*appDelegate.contactList.append(Contact(firstname: firstNameFld.text!, lastname: lastNameFld.text!, mobileno: mobileFld.text!))
         print(String(appDelegate.contactList.count))*/
-        let tr = TeamRolesController()
-        tr.AddTeamRoles(newTeamRoles: TeamRoles(rolename: roleNameFld.text!, rolequantity: roleQuantityFld.text!))
-        
-        appDelegate.teamRolesList = tr.retrieveAllTeamRoles()
-        self.tabBarController?.selectedIndex = 1
+        //let tr = TeamRolesController()
+        //tr.AddTeamRoles(newTeamRoles: TeamRoles(rolename: roleNameFld.text!, rolequantity: roleQuantityFld.text!))
+        appDelegate.teamRolesList.append(TeamRoles(rolename: roleNameFld.text!, rolequantity: roleQuantityFld.text!))
+        print(appDelegate.teamRolesList.count)
+        //appDelegate.teamRolesList = tr.retrieveAllTeamRoles()
     }
 }

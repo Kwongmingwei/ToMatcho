@@ -56,4 +56,9 @@ class UserAllGameViewController: UITableViewController {
         cell.detailTextLabel?.text = "\(game.gameid)"
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        appDelegate.gameID = appDelegate.gameList[indexPath.row].gameid
+    }
+
 }
