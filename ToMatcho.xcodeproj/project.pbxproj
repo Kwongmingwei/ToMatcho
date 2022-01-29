@@ -14,6 +14,7 @@
 		1DAF581227A161F900DD373C /* TeamRoles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF581127A161F900DD373C /* TeamRoles.swift */; };
 		1DAF581427A16C4B00DD373C /* TeamRolesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF581327A16C4B00DD373C /* TeamRolesController.swift */; };
 		1DAF581627A18A8E00DD373C /* AddTeamTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF581527A18A8E00DD373C /* AddTeamTableViewController.swift */; };
+		7B90B4C727A586B900E8E680 /* UserAllTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90B4C627A586B900E8E680 /* UserAllTeamViewController.swift */; };
 		B40F76AD279A47CC006F5191 /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B40F76AC279A47CC006F5191 /* Admin.storyboard */; };
 		B42894B127A0F43600FB8403 /* AddGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42894B027A0F43600FB8403 /* AddGameViewController.swift */; };
 		B4311EBB27911D6F000EC348 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4311EBA27911D6F000EC348 /* AppDelegate.swift */; };
@@ -63,6 +64,7 @@
 		1DAF581127A161F900DD373C /* TeamRoles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRoles.swift; sourceTree = "<group>"; };
 		1DAF581327A16C4B00DD373C /* TeamRolesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRolesController.swift; sourceTree = "<group>"; };
 		1DAF581527A18A8E00DD373C /* AddTeamTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeamTableViewController.swift; sourceTree = "<group>"; };
+		7B90B4C627A586B900E8E680 /* UserAllTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAllTeamViewController.swift; sourceTree = "<group>"; };
 		B40F76AC279A47CC006F5191 /* Admin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Admin.storyboard; sourceTree = "<group>"; };
 		B42894B027A0F43600FB8403 /* AddGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGameViewController.swift; sourceTree = "<group>"; };
 		B4311EB727911D6F000EC348 /* ToMatcho.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToMatcho.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +158,7 @@
 				B447E8E627968E840000E862 /* RegisterViewController.swift */,
 				B40F76AC279A47CC006F5191 /* Admin.storyboard */,
 				1DAF580927A12AC600DD373C /* UserAllGameViewController.swift */,
+				7B90B4C627A586B900E8E680 /* UserAllTeamViewController.swift */,
 				B4311EC027911D6F000EC348 /* Main.storyboard */,
 				1D7C28FC279150470040588E /* ToMatcho.storyboard */,
 				B4A7E27027A534CC00470A9C /* MyTeamsViewController.swift */,
@@ -322,6 +325,7 @@
 				B4A7E27327A5365500470A9C /* Teams.swift in Sources */,
 				B42894B127A0F43600FB8403 /* AddGameViewController.swift in Sources */,
 				1DAF580C27A138F200DD373C /* AddTeamViewController.swift in Sources */,
+				7B90B4C727A586B900E8E680 /* UserAllTeamViewController.swift in Sources */,
 				1DAF581227A161F900DD373C /* TeamRoles.swift in Sources */,
 				B43E934E279D2105006DE37C /* AllGameViewController.swift in Sources */,
 				1DAF581627A18A8E00DD373C /* AddTeamTableViewController.swift in Sources */,
