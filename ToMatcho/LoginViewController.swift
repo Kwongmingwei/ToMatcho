@@ -11,6 +11,7 @@ import Firebase
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var emailFld: UITextField!
     @IBOutlet weak var pwdFld: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
@@ -21,12 +22,17 @@ class LoginViewController: UIViewController {
     
     }
     @IBAction func loginBtn(_ sender: Any) {
+        spinner.isHidden=false
+        spinner.startAnimating()
+        
         Auth.auth().signIn(withEmail: emailFld.text!, password: pwdFld.text!, completion: {(result,error) in
             if error != nil{
                 let alertView = UIAlertController(title: "Unsuccessful login", message: "Error: "+error!.localizedDescription, preferredStyle: UIAlertController.Style.alert)
                 alertView.addAction(UIAlertAction(title: "Try again", style: UIAlertAction.Style.default, handler: { _ in
                     self.pwdFld.text=""
                 }))
+                self.spinner.stopAnimating()
+                self.spinner.isHidden=true
                 self.present(alertView,animated: false,completion: nil)
             }
             else{
@@ -45,6 +51,8 @@ class LoginViewController: UIViewController {
                         let vc=storyboard.instantiateViewController(withIdentifier: "ToMatchoMain") as UIViewController
                         self.view.window?.rootViewController=vc
                         vc.modalPresentationStyle = .fullScreen
+                        self.spinner.stopAnimating()
+                        self.spinner.isHidden=true
                         self.present(vc,animated:true,completion: nil)
                     }
                     else if access=="admin"{
@@ -52,6 +60,8 @@ class LoginViewController: UIViewController {
                         let vc=storyboard.instantiateViewController(withIdentifier: "AdminTBC") as UIViewController
                         self.view.window?.rootViewController=vc
                         vc.modalPresentationStyle = .fullScreen
+                        self.spinner.stopAnimating()
+                        self.spinner.isHidden=true
                         self.present(vc,animated:true,completion: nil)
                     }
                 }

@@ -36,6 +36,7 @@ class AllGameViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         loadData()
         tableView.reloadData()
     }
@@ -51,10 +52,12 @@ class AllGameViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell=self.tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath)
         let game=appDelegate.gameList[indexPath.row]
+        cell.textLabel!.textColor = UIColor.white
         cell.textLabel!.text = "\(game.gameName)"
         print("gamelist count:"+game.gameName)
         print("gamelist count:"+game.gameid)
         cell.detailTextLabel!.text = "\(game.gameid)"
+        cell.detailTextLabel!.textColor = UIColor.white
         return cell
     }
     

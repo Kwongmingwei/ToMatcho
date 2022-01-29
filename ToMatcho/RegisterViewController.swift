@@ -13,6 +13,8 @@ import FirebaseFirestore
 
 class RegisterViewController: UIViewController {
 
+    
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var usrNameFld: UITextField!
     @IBOutlet weak var emailFld: UITextField!
     @IBOutlet weak var pwdFld: UITextField!
@@ -27,6 +29,8 @@ class RegisterViewController: UIViewController {
     }
 
     @IBAction func regBtnClick(_ sender: Any) {
+        loadingIndicator.isHidden=false
+        loadingIndicator.startAnimating()
         errorFld.alpha=0
         let validation=isPasswordValid(password: pwdFld.text!, password2: pwdFld2.text!)
         if (validation=="valid"){
@@ -36,6 +40,8 @@ class RegisterViewController: UIViewController {
                     alertView.addAction(UIAlertAction(title: "Try again", style: UIAlertAction.Style.default, handler: { _ in
                         self.emailFld.text=""
                     }))
+                    self.loadingIndicator.stopAnimating()
+                    self.loadingIndicator.isHidden=true
                     self.present(alertView,animated: false,completion: nil)
                 }
                 else{
@@ -50,6 +56,8 @@ class RegisterViewController: UIViewController {
                                 self.pwdFld.text=""
                                 self.pwdFld2.text=""*/
                             }))
+                            self.loadingIndicator.stopAnimating()
+                            self.loadingIndicator.isHidden=true
                             self.present(alertView,animated: false,completion: nil)
                         }
                         else{
@@ -60,6 +68,8 @@ class RegisterViewController: UIViewController {
                                 vc.modalPresentationStyle = .fullScreen
                                 self.present(vc,animated:true,completion: nil)
                             }))
+                            self.loadingIndicator.stopAnimating()
+                            self.loadingIndicator.isHidden=true
                             self.present(alertView,animated: false,completion: nil)
                         }
                     })
