@@ -8,7 +8,6 @@
 import UIKit
 import Foundation
 import Firebase
-import FirebaseAuth
 import FirebaseFirestore
 
 class AddGameViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource {
