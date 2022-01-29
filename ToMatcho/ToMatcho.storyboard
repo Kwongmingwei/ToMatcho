@@ -131,7 +131,9 @@
         <scene sceneID="oY4-47-oon">
             <objects>
                 <navigationController id="dMD-li-yYc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Teams" image="person.2.circle.fill" catalog="system" id="Jo8-kC-pmd"/>
+                    <tabBarItem key="tabBarItem" title="My Teams" image="person.2.circle.fill" catalog="system" id="Jo8-kC-pmd">
+                        <color key="badgeColor" red="0.6446730799" green="0.11735001220000001" blue="0.038646582419999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y8w-Z4-ui5">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
