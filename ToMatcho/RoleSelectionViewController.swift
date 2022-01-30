@@ -25,8 +25,6 @@ class RoleSelectViewController: UIViewController,UITableViewDelegate,UITableView
     
     func loadData(){
         
-        
-        
         if (teamid != ""){
             let docRef = Firestore.firestore().collection("teams").document(teamid)
 
