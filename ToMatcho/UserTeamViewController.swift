@@ -16,6 +16,7 @@ class UserTeamViewController: UITableViewController {
     var myteamsList:[Teams]=[]
     var userid = Auth.auth().currentUser?.uid
     
+    
     func loadData(){
         Firestore.firestore().collection("teams").whereField("gameID", isEqualTo: appDelegate.gameID).getDocuments() {(querySnapshot,err) in
             if err == nil{
@@ -40,6 +41,7 @@ class UserTeamViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        appDelegate.teamID=""
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         loadData()
         //tableView.reloadData()
@@ -72,9 +74,6 @@ class UserTeamViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        /*
-        appDelegate.chosenTeamName = myteamsList[indexPath.row].teamName
-        appDelegate.chosenTeamDescription = myteamsList[indexPath.row].teamDesc
-         */
+        appDelegate.teamID=myteamsList[indexPath.row].teamId
     }
 }
