@@ -41,7 +41,6 @@ class UserTeamViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        appDelegate.teamID=""
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         loadData()
         //tableView.reloadData()
@@ -74,6 +73,9 @@ class UserTeamViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        appDelegate.teamID=myteamsList[indexPath.row].teamId
+        if let vc=storyboard?.instantiateViewController(withIdentifier: "JoinTeam") as? RoleSelectViewController{
+            vc.teamid=myteamsList[indexPath.row].teamId
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }

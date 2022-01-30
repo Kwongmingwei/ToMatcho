@@ -47,11 +47,11 @@ class RoleSelectViewController: UIViewController,UITableViewDelegate,UITableView
                         let docId=document.documentID
                         let rolename=document.get("roleName") as! String
                         let quantity=document.get("roleQuantity") as! Int
-                        //self.gameList.append(Game(gamename: gamename, gameId: docId,gameDev: developer))
-                        self.roleList.append(TeamRoles(roleid: docId, rolename: rolename, rolequantity: quantity))
+                        if quantity>0{
+                            self.roleList.append(TeamRoles(roleid: docId, rolename: rolename, rolequantity: quantity))
+                        }
                     }
                 }
-                
                 self.roleTV.reloadData()
             }
         }
@@ -73,7 +73,6 @@ class RoleSelectViewController: UIViewController,UITableViewDelegate,UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        teamid = appDelegate.teamID
         roleTV.delegate=self
         roleTV.dataSource=self
         roleTV.reloadData()
