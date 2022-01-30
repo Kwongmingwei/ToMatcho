@@ -4,7 +4,7 @@
 //
 //  Created by Ho Jun An on 30/1/22.
 //
-
+/*
 import UIKit
 import Foundation
 import Firebase
@@ -75,3 +75,4 @@ class JoinTeamViewController: UIViewController,UITableViewDelegate,UITableViewDa
         _ = navigationController?.popViewController(animated: true)
     }
 }
+*/
