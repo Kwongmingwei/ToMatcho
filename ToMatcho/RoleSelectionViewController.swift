@@ -78,14 +78,42 @@ class RoleSelectViewController: UIViewController,UITableViewDelegate,UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let vc=storyboard?.instantiateViewController(withIdentifier: "TestView") as? TestViewController{
-            vc.roleid = roleList[indexPath.row].roleId
-            vc.rolename = roleList[indexPath.row].roleName
-            vc.teamid = teamid
-            vc.uid=String(Auth.auth().currentUser!.uid)
-            vc.quantity=roleList[indexPath.row].roleQuantity
-            self.navigationController?.pushViewController(vc, animated: true)
+        
+        let alertView = UIAlertController(title: "Join Team?", message:nil, preferredStyle: UIAlertController.Style.alert)
+        alertView.addTextField { (textField) in
+            textField.placeholder = "In Game User ID"
         }
+        alertView.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: { _ in
+        }))
+        alertView.addAction(UIAlertAction(title: "Join", style: UIAlertAction.Style.default, handler: { _ in
+            let dateformat = DateFormatter()
+            dateformat.dateFormat = "dd/MM/yyyy"
+            let date = dateformat.string(from: Date())
+            guard let textFields = alertView.textFields else { return }
+            let db = Firestore.firestore()
+            db.collection("teamroles").addDocument(data: [
+                "teamid": self.teamid,
+                "roleid": self.roleList[indexPath.row].roleId,
+                "userid":String(Auth.auth().currentUser!.uid),
+                "uInGameID":textFields[0].text!,
+                "roleName":self.roleList[indexPath.row].roleName,
+                "joinedon":date
+            ]) { [self] err in
+                if let err = err {
+                    let alertView = UIAlertController(title: "Unsuccessful Action", message: "Error: "+err.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+                    alertView.addAction(UIAlertAction(title: "Try again", style: UIAlertAction.Style.default, handler: { _ in
+                    }))
+                    self.present(alertView,animated: false,completion: nil)
+                } else {
+                    db.collection("roles").document(self.roleList[indexPath.row].roleId).setData([ "roleQuantity": self.roleList[indexPath.row].roleQuantity-1], merge: true)
+                    print("success")
+                    if let vc=self.storyboard?.instantiateViewController(withIdentifier: "TeamList") as? UserTeamViewController{
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+                }
+            }
+        }))
+        self.present(alertView,animated: false,completion: nil)
     }
     
     
