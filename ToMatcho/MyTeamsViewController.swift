@@ -65,6 +65,13 @@ class MyTeamsViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let vc=storyboard?.instantiateViewController(withIdentifier: "TeamDetails") as? MyTeamsDetailViewController{
+            vc.teamid = myteamsList[indexPath.row].teamId
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, commit editingStyle:
         UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {

@@ -36,6 +36,8 @@
 		B447E8E527968D190000E862 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447E8E427968D190000E862 /* LoginViewController.swift */; };
 		B447E8E727968E840000E862 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447E8E627968E840000E862 /* RegisterViewController.swift */; };
 		B447E8E92796B5FF0000E862 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447E8E82796B5FF0000E862 /* TestViewController.swift */; };
+		B472F3B627A6EB9800D69C09 /* MyTeamsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B472F3B527A6EB9800D69C09 /* MyTeamsDetailViewController.swift */; };
+		B472F3B827A6EBC000D69C09 /* TeamMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B472F3B727A6EBC000D69C09 /* TeamMembers.swift */; };
 		B49F8DDC27A6E8B500F7DCA1 /* RoleSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49F8DDB27A6E8B500F7DCA1 /* RoleSelectionViewController.swift */; };
 		B4A7E27127A534CC00470A9C /* MyTeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A7E27027A534CC00470A9C /* MyTeamsViewController.swift */; };
 		B4A7E27327A5365500470A9C /* Teams.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A7E27227A5365500470A9C /* Teams.swift */; };
@@ -89,6 +91,8 @@
 		B447E8E427968D190000E862 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B447E8E627968E840000E862 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B447E8E82796B5FF0000E862 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		B472F3B527A6EB9800D69C09 /* MyTeamsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyTeamsDetailViewController.swift; path = "../../../ToMatcho 2/ToMatcho/MyTeamsDetailViewController.swift"; sourceTree = "<group>"; };
+		B472F3B727A6EBC000D69C09 /* TeamMembers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamMembers.swift; sourceTree = "<group>"; };
 		B49F8DDB27A6E8B500F7DCA1 /* RoleSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoleSelectionViewController.swift; sourceTree = "<group>"; };
 		B4A7E27027A534CC00470A9C /* MyTeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamsViewController.swift; sourceTree = "<group>"; };
 		B4A7E27227A5365500470A9C /* Teams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teams.swift; sourceTree = "<group>"; };
@@ -153,7 +157,6 @@
 		B4311EB927911D6F000EC348 /* ToMatcho */ = {
 			isa = PBXGroup;
 			children = (
-				B49F8DDB27A6E8B500F7DCA1 /* RoleSelectionViewController.swift */,
 				B4311EBA27911D6F000EC348 /* AppDelegate.swift */,
 				B4311EBC27911D6F000EC348 /* SceneDelegate.swift */,
 				B42894B027A0F43600FB8403 /* AddGameViewController.swift */,
@@ -162,14 +165,17 @@
 				B4A7E27227A5365500470A9C /* Teams.swift */,
 				B4311EBE27911D6F000EC348 /* ViewController.swift */,
 				B447E8E427968D190000E862 /* LoginViewController.swift */,
+				B49F8DDB27A6E8B500F7DCA1 /* RoleSelectionViewController.swift */,
 				B447E8E627968E840000E862 /* RegisterViewController.swift */,
 				B40F76AC279A47CC006F5191 /* Admin.storyboard */,
 				1DAF580927A12AC600DD373C /* UserAllGameViewController.swift */,
 				7B90B4C627A586B900E8E680 /* UserAllTeamViewController.swift */,
 				B4311EC027911D6F000EC348 /* Main.storyboard */,
 				1D7C28FC279150470040588E /* ToMatcho.storyboard */,
+				B472F3B727A6EBC000D69C09 /* TeamMembers.swift */,
 				7B8A0D7227A63BBD008BE314 /* JoinTeamViewController.swift */,
 				B4A7E27027A534CC00470A9C /* MyTeamsViewController.swift */,
+				B472F3B527A6EB9800D69C09 /* MyTeamsDetailViewController.swift */,
 				B41AF6E527A563B500936F73 /* UserTeamViewController.swift */,
 				1DAF580F27A161A700DD373C /* AddTeamRolesViewController.swift */,
 				1DAF581327A16C4B00DD373C /* TeamRolesController.swift */,
@@ -337,6 +343,7 @@
 				7B90B4C727A586B900E8E680 /* UserAllTeamViewController.swift in Sources */,
 				1DAF581227A161F900DD373C /* TeamRoles.swift in Sources */,
 				B43E934E279D2105006DE37C /* AllGameViewController.swift in Sources */,
+				B472F3B627A6EB9800D69C09 /* MyTeamsDetailViewController.swift in Sources */,
 				1DAF581627A18A8E00DD373C /* AddTeamTableViewController.swift in Sources */,
 				B43E9350279D2950006DE37C /* Game.swift in Sources */,
 				B4A7E27127A534CC00470A9C /* MyTeamsViewController.swift in Sources */,
@@ -352,6 +359,7 @@
 				B447E8E727968E840000E862 /* RegisterViewController.swift in Sources */,
 				B447E8E527968D190000E862 /* LoginViewController.swift in Sources */,
 				B4311EBD27911D6F000EC348 /* SceneDelegate.swift in Sources */,
+				B472F3B827A6EBC000D69C09 /* TeamMembers.swift in Sources */,
 				1DAF580A27A12AC600DD373C /* UserAllGameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

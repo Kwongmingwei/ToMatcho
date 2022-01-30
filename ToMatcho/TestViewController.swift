@@ -51,6 +51,7 @@ class TestViewController: UIViewController {
             "roleid": roleidtxt.text!,
             "userid":userid.text!,
             "uInGameID":idFld.text!,
+            "roleName":rolenametxt.text!,
             "joinedon":date
         ]) { err in
             if let err = err {
