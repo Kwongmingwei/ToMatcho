@@ -54,6 +54,45 @@ class AddTeamViewController: UIViewController,UITableViewDelegate,UITableViewDat
         return cell
     }
     
+    
+    @IBAction func addRoleBtn(_ sender: Any) {
+        let alertController = UIAlertController(title: "Add Role",
+                                                    message: nil,
+                                                    preferredStyle: .alert)
+            
+            self.present(alertController,
+                         animated: true)
+        alertController.addTextField { (textField) in
+            textField.placeholder = "RoleName"
+        }
+        alertController.addTextField { (textField) in
+            textField.placeholder = "RoleQuantity"
+        }
+        let cancelAction = UIAlertAction(title: "Cancel",
+                                           style: .default) { [weak alertController] _ in
+                                            self.viewDidLoad()
+                                            self.dismiss(animated: true, completion: nil)
+            
+        }
+        alertController.addAction(cancelAction)
+        let continueAction = UIAlertAction(title: "Continue",
+                                           style: .default) { [weak alertController] _ in
+                                            guard let textFields = alertController?.textFields else { return }
+                                            
+                                            if let roleName = textFields[0].text,
+                                               let roleQuantity = textFields[1].text {
+                                                print("RoleName: \(roleName)")
+                                                print("RoleQuantiy: \(roleQuantity)")
+                                                self.appDelegate.teamRolesList.append(TeamRoles(roleid: "", rolename: roleName, rolequantity: Int(roleQuantity)!))
+                                                self.viewDidLoad()
+                                                self.dismiss(animated: true, completion: nil)
+                                            }
+            
+    }
+        alertController.addAction(continueAction)
+        
+    }
+    
     @IBAction func addTeamBtn(_ sender: Any) {
         print("test1")
         if txtTeamName.text!.replacingOccurrences(of: " ", with: "") == "" || txtTeamDescription.text!.replacingOccurrences(of: " ", with: "") == "" {
@@ -88,7 +127,23 @@ class AddTeamViewController: UIViewController,UITableViewDelegate,UITableViewDat
                 }
             
         }
+        appDelegate.teamRolesList = []
     }
     
-    
+    func tableView(_ tableView: UITableView, commit editingStyle:
+        UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            if indexPath.section == 0 {
+                appDelegate.teamRolesList.remove(at: indexPath.row)
+                
+            }
+            else { appDelegate.teamRolesList.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath as IndexPath],with:UITableView.RowAnimation.fade)}
+        }
+        else if editingStyle == UITableViewCell.EditingStyle.insert {
+            // Create a new instance of the appropriate class, insert it into the array,
+            //and add a new row to the table view.
+        }
+        roleTV.reloadData()
+    }
 }

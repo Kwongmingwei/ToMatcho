@@ -36,7 +36,6 @@
 		B447E8E527968D190000E862 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447E8E427968D190000E862 /* LoginViewController.swift */; };
 		B447E8E727968E840000E862 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447E8E627968E840000E862 /* RegisterViewController.swift */; };
 		B447E8E92796B5FF0000E862 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B447E8E82796B5FF0000E862 /* TestViewController.swift */; };
-		B49F8D7D27A6AA4800F7DCA1 /* RoleSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49F8D7C27A6AA4800F7DCA1 /* RoleSelectionViewController.swift */; };
 		B4A7E27127A534CC00470A9C /* MyTeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A7E27027A534CC00470A9C /* MyTeamsViewController.swift */; };
 		B4A7E27327A5365500470A9C /* Teams.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A7E27227A5365500470A9C /* Teams.swift */; };
 		B4F3EE0D27A162B900A54FA4 /* icon (1).png in Resources */ = {isa = PBXBuildFile; fileRef = B4F3EE0C27A162B800A54FA4 /* icon (1).png */; };
@@ -89,7 +88,6 @@
 		B447E8E427968D190000E862 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B447E8E627968E840000E862 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B447E8E82796B5FF0000E862 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
-		B49F8D7C27A6AA4800F7DCA1 /* RoleSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleSelectionViewController.swift; sourceTree = "<group>"; };
 		B4A7E27027A534CC00470A9C /* MyTeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamsViewController.swift; sourceTree = "<group>"; };
 		B4A7E27227A5365500470A9C /* Teams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teams.swift; sourceTree = "<group>"; };
 		B4F3EE0C27A162B800A54FA4 /* icon (1).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon (1).png"; sourceTree = "<group>"; };
@@ -167,7 +165,6 @@
 				7B90B4C627A586B900E8E680 /* UserAllTeamViewController.swift */,
 				B4311EC027911D6F000EC348 /* Main.storyboard */,
 				1D7C28FC279150470040588E /* ToMatcho.storyboard */,
-				B49F8D7C27A6AA4800F7DCA1 /* RoleSelectionViewController.swift */,
 				7B8A0D7227A63BBD008BE314 /* JoinTeamViewController.swift */,
 				B4A7E27027A534CC00470A9C /* MyTeamsViewController.swift */,
 				B41AF6E527A563B500936F73 /* UserTeamViewController.swift */,
@@ -346,7 +343,6 @@
 				7B8A0D7327A63BBD008BE314 /* JoinTeamViewController.swift in Sources */,
 				1DAF581027A161A700DD373C /* AddTeamRolesViewController.swift in Sources */,
 				B41AF6E627A563B500936F73 /* UserTeamViewController.swift in Sources */,
-				B49F8D7D27A6AA4800F7DCA1 /* RoleSelectionViewController.swift in Sources */,
 				B4311EBB27911D6F000EC348 /* AppDelegate.swift in Sources */,
 				1DAF581427A16C4B00DD373C /* TeamRolesController.swift in Sources */,
 				B447E8E727968E840000E862 /* RegisterViewController.swift in Sources */,
