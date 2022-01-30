@@ -120,7 +120,7 @@ class AddTeamViewController: UIViewController,UITableViewDelegate,UITableViewDat
                 "createdBy": String(uid!),
                 "createdDate": dateFormatter.string(from: date) ])
             for i in appDelegate.teamRolesList {
-                ref = db.collection("roles").addDocument(data: [
+                db.collection("roles").addDocument(data: [
                     "roleName": i.roleName,
                     "roleQuantity": i.roleQuantity,
                     "teamID": ref!.documentID])

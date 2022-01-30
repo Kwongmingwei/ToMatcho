@@ -57,7 +57,7 @@ class RoleSelectViewController: UIViewController,UITableViewDelegate,UITableView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("tv")
+        print(String(roleList.count))
         return roleList.count
     }
     

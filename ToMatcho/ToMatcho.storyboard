@@ -761,9 +761,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="L8w-H2-mmp"/>
                     <connections>
-                        <outlet property="lblTDesc" destination="9h1-kL-H2Y" id="JUd-uG-ERI"/>
-                        <outlet property="lblTName" destination="6UL-Ra-ltw" id="fck-6V-G59"/>
-                        <outlet property="memberTV" destination="6rb-Jj-Ulq" id="9Dg-cF-DUn"/>
+                        <outlet property="lblTDesc" destination="9h1-kL-H2Y" id="56o-Nr-pJP"/>
+                        <outlet property="lblTName" destination="6UL-Ra-ltw" id="4T6-an-Pgh"/>
+                        <outlet property="memberTV" destination="6rb-Jj-Ulq" id="A2m-YV-LiB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="28e-v0-XdL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
