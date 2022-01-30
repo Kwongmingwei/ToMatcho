@@ -16,6 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var teamList:[Teams] = []
     var teamRolesList:[TeamRoles] = []
     var gameID:String = ""
+    var teamID:String = ""
+    
+    var chosenTeamName:String = ""
+    var chosenTeamDescription:String = ""
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

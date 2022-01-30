@@ -423,7 +423,7 @@
         <!--Join Team-->
         <scene sceneID="qKu-bp-szg">
             <objects>
-                <viewController id="pAC-gz-tjP" sceneMemberID="viewController">
+                <viewController id="pAC-gz-tjP" customClass="JoinTeamViewController" customModule="ToMatcho" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x8p-vs-FOC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -440,9 +440,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Roles Available" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srQ-BA-QM7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Roles Available" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srQ-BA-QM7">
                                 <rect key="frame" x="40" y="260" width="334" height="20.5"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -451,9 +450,12 @@
                                 <rect key="frame" x="40" y="742" width="334" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Join Team"/>
+                                <connections>
+                                    <action selector="joinTeam:" destination="pAC-gz-tjP" eventType="touchUpInside" id="oZY-xZ-4Ti"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Choose One" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnQ-I5-IxD">
-                                <rect key="frame" x="40" y="288" width="334" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose One" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnQ-I5-IxD">
+                                <rect key="frame" x="40" y="288" width="334" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -489,25 +491,48 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="avV-xI-ndd"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="ZBP-0Y-ndB"/>
                             </scrollView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Account ID" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VIU-Ym-K9J">
+                                <rect key="frame" x="80" y="204" width="255" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qMI-HD-bJH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="d2f-VB-iGb" firstAttribute="leading" secondItem="qMI-HD-bJH" secondAttribute="leading" constant="40" id="0I6-6w-MLA"/>
                             <constraint firstItem="qMI-HD-bJH" firstAttribute="trailing" secondItem="IKh-O6-F2A" secondAttribute="trailing" constant="40" id="0b2-NB-9Js"/>
+                            <constraint firstItem="VIU-Ym-K9J" firstAttribute="leading" secondItem="qMI-HD-bJH" secondAttribute="leading" constant="80" id="0lf-D2-6Yj"/>
+                            <constraint firstItem="qMI-HD-bJH" firstAttribute="trailing" secondItem="srQ-BA-QM7" secondAttribute="trailing" constant="40" id="1Xk-y4-I1D"/>
+                            <constraint firstItem="qMI-HD-bJH" firstAttribute="trailing" secondItem="VIU-Ym-K9J" secondAttribute="trailing" constant="79" id="BuC-R0-Dbn"/>
+                            <constraint firstItem="srQ-BA-QM7" firstAttribute="leading" secondItem="qMI-HD-bJH" secondAttribute="leading" constant="40" id="HUE-xd-4VT"/>
+                            <constraint firstItem="wnQ-I5-IxD" firstAttribute="leading" secondItem="qMI-HD-bJH" secondAttribute="leading" constant="40" id="HnY-j2-ews"/>
                             <constraint firstItem="N8L-X0-4c1" firstAttribute="leading" secondItem="qMI-HD-bJH" secondAttribute="leading" constant="40" id="Q88-BC-DpG"/>
+                            <constraint firstItem="srQ-BA-QM7" firstAttribute="top" secondItem="VIU-Ym-K9J" secondAttribute="bottom" constant="22" id="Rag-Ow-bq7"/>
                             <constraint firstItem="d2f-VB-iGb" firstAttribute="top" secondItem="wnQ-I5-IxD" secondAttribute="bottom" constant="20" id="RnJ-L7-gSh"/>
                             <constraint firstItem="qMI-HD-bJH" firstAttribute="trailing" secondItem="d2f-VB-iGb" secondAttribute="trailing" constant="40" id="WYt-uD-hDC"/>
                             <constraint firstItem="tzk-qp-gs4" firstAttribute="top" secondItem="N8L-X0-4c1" secondAttribute="bottom" constant="20" id="akg-tq-5s7"/>
+                            <constraint firstItem="qMI-HD-bJH" firstAttribute="trailing" secondItem="wnQ-I5-IxD" secondAttribute="trailing" constant="40" id="bDb-UX-EA4"/>
                             <constraint firstItem="qMI-HD-bJH" firstAttribute="trailing" secondItem="tzk-qp-gs4" secondAttribute="trailing" constant="40" id="cQD-Ck-FPK"/>
+                            <constraint firstItem="wnQ-I5-IxD" firstAttribute="top" secondItem="srQ-BA-QM7" secondAttribute="bottom" constant="7.5" id="e4h-vW-eLC"/>
                             <constraint firstItem="qMI-HD-bJH" firstAttribute="bottom" secondItem="IKh-O6-F2A" secondAttribute="bottom" constant="40" id="idI-aw-RSn"/>
                             <constraint firstItem="tzk-qp-gs4" firstAttribute="leading" secondItem="qMI-HD-bJH" secondAttribute="leading" constant="40" id="jg0-jv-Eyd"/>
                             <constraint firstItem="IKh-O6-F2A" firstAttribute="leading" secondItem="qMI-HD-bJH" secondAttribute="leading" constant="40" id="kew-GU-GYS"/>
+                            <constraint firstItem="d2f-VB-iGb" firstAttribute="top" secondItem="wnQ-I5-IxD" secondAttribute="bottom" constant="23.5" id="kgc-dH-c2q"/>
+                            <constraint firstItem="srQ-BA-QM7" firstAttribute="top" secondItem="VIU-Ym-K9J" secondAttribute="bottom" constant="22" id="nkO-g5-bpJ"/>
+                            <constraint firstItem="VIU-Ym-K9J" firstAttribute="top" secondItem="tzk-qp-gs4" secondAttribute="bottom" constant="24.5" id="pwt-W5-PMu"/>
                             <constraint firstItem="qMI-HD-bJH" firstAttribute="trailing" secondItem="N8L-X0-4c1" secondAttribute="trailing" constant="40" id="qmb-SM-zrb"/>
                             <constraint firstItem="N8L-X0-4c1" firstAttribute="top" secondItem="qMI-HD-bJH" secondAttribute="top" constant="30" id="yfJ-fw-TdZ"/>
+                            <constraint firstItem="wnQ-I5-IxD" firstAttribute="top" secondItem="srQ-BA-QM7" secondAttribute="bottom" constant="7.5" id="yv7-Qf-vkF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Join Team" id="fm2-q6-caj"/>
+                    <connections>
+                        <outlet property="displayTeamDescription" destination="tzk-qp-gs4" id="lK4-w1-Yly"/>
+                        <outlet property="displayTeamName" destination="N8L-X0-4c1" id="Fge-Kd-09M"/>
+                        <outlet property="inputAccountID" destination="VIU-Ym-K9J" id="qWJ-Sl-c2I"/>
+                        <outlet property="roleTableView" destination="VAo-9V-bVL" id="leF-X4-gMJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y0z-0R-gbk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

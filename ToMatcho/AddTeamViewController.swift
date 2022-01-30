@@ -50,7 +50,7 @@ class AddTeamViewController: UIViewController,UITableViewDelegate,UITableViewDat
         print("3")
         cell = tableView.dequeueReusableCell(withIdentifier: "roleCell", for: indexPath)
         cell.textLabel!.text = appDelegate.teamRolesList[indexPath.row].roleName
-        cell.detailTextLabel?.text = appDelegate.teamRolesList[indexPath.row].roleQuantity
+        cell.detailTextLabel?.text = String(appDelegate.teamRolesList[indexPath.row].roleQuantity)
         return cell
     }
     

@@ -9,9 +9,9 @@ import Foundation
 
 class TeamRoles {
     var roleName:String
-    var roleQuantity:String
+    var roleQuantity:Int
     
-    init(rolename:String, rolequantity:String){
+    init(rolename:String, rolequantity:Int){
         roleName = rolename
         roleQuantity = rolequantity
     }
