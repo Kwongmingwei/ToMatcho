@@ -29,7 +29,7 @@ class AddTeamRolesViewController: UIViewController {
         print(String(appDelegate.contactList.count))*/
         //let tr = TeamRolesController()
         //tr.AddTeamRoles(newTeamRoles: TeamRoles(rolename: roleNameFld.text!, rolequantity: roleQuantityFld.text!))
-        appDelegate.teamRolesList.append(TeamRoles(rolename: roleNameFld.text!, rolequantity: Int(roleQuantityFld.text!)!))
+        appDelegate.teamRolesList.append(TeamRoles(roleid:"",rolename: roleNameFld.text!, rolequantity: Int(roleQuantityFld.text!)!))
         print(appDelegate.teamRolesList.count)
         //appDelegate.teamRolesList = tr.retrieveAllTeamRoles()
     }

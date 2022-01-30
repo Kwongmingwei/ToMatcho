@@ -72,7 +72,9 @@ class UserTeamViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        /*
         appDelegate.chosenTeamName = myteamsList[indexPath.row].teamName
         appDelegate.chosenTeamDescription = myteamsList[indexPath.row].teamDesc
+         */
     }
 }

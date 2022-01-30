@@ -8,10 +8,12 @@
 import Foundation
 
 class TeamRoles {
+    var roleId:String
     var roleName:String
     var roleQuantity:Int
     
-    init(rolename:String, rolequantity:Int){
+    init(roleid:String,rolename:String, rolequantity:Int){
+        roleId=roleid
         roleName = rolename
         roleQuantity = rolequantity
     }

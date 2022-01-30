@@ -43,7 +43,7 @@ class TeamRolesController{
             for t in managedteamRolesList {
                 let rolename = t.value(forKeyPath: "rolename") as! String
                 let rolequantity = t.value(forKeyPath: "rolequantity") as! String
-                let teamroles:TeamRoles = TeamRoles(rolename: rolename, rolequantity: Int(rolequantity)!)
+                let teamroles:TeamRoles = TeamRoles(roleid:"",rolename: rolename, rolequantity: Int(rolequantity)!)
                 teamRolesList.append(teamroles)
             }
         } catch let error as NSError {
