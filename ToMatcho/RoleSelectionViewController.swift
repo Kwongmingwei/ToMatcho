@@ -17,10 +17,28 @@ class RoleSelectViewController: UIViewController,UITableViewDelegate,UITableView
     
     var teamid:String=""
     
+    @IBOutlet weak var tNametxt: UILabel!
+    @IBOutlet weak var tDesctxt: UILabel!
+    
+    
     var roleList:[TeamRoles]=[]
     
     func loadData(){
+        
+        
+        
         if (teamid != ""){
+            let docRef = Firestore.firestore().collection("teams").document(teamid)
+
+            docRef.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    self.tNametxt.text=document.get("teamName") as? String
+                    self.tDesctxt.text=document.get("teamDescription") as? String
+                } else {
+                    print("Document does not exist")
+                }
+            }
+            
             Firestore.firestore().collection("roles").whereField("teamID", isEqualTo: teamid).getDocuments() {(querySnapshot,err) in
                 if err == nil{
                     print("b4 rolelist count:"+String(self.roleList.count))
@@ -47,8 +65,8 @@ class RoleSelectViewController: UIViewController,UITableViewDelegate,UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell=UITableViewCell()
-               print("3")
-               cell = tableView.dequeueReusableCell(withIdentifier: "RoleCell", for: indexPath)
+        print("3")
+        cell = tableView.dequeueReusableCell(withIdentifier: "RoleCell", for: indexPath)
         cell.textLabel!.text=roleList[indexPath.row].roleName
         return cell
     }
@@ -67,6 +85,8 @@ class RoleSelectViewController: UIViewController,UITableViewDelegate,UITableView
             vc.roleid = roleList[indexPath.row].roleId
             vc.rolename = roleList[indexPath.row].roleName
             vc.teamid = teamid
+            vc.uid=String(Auth.auth().currentUser!.uid)
+            vc.quantity=roleList[indexPath.row].roleQuantity
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
