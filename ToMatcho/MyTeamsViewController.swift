@@ -22,6 +22,7 @@ class MyTeamsViewController: UITableViewController {
                 print("b4 myteams count:"+String(self.myteamsList.count))
                 self.myteamsList.removeAll()
                 for document in querySnapshot!.documents{
+                    print("+1")
                     let docId=document.documentID
                     let teamname=document.get("teamName") as! String
                     let gameid = document.get("gameID") as! String
@@ -42,7 +43,11 @@ class MyTeamsViewController: UITableViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         loadData()
-        //tableView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loadData()
     }
     
     
@@ -72,9 +77,56 @@ class MyTeamsViewController: UITableViewController {
         }
     }
     
+    func deleteIt(teamId:String){
+        Firestore.firestore().collection("teamroles").whereField("teamid", isEqualTo: teamId).getDocuments() {(querySnapshot,err) in
+            if err == nil{
+                for document in querySnapshot!.documents{
+                    print("have docs")
+                    let id=String(document.documentID)
+                    Firestore.firestore().collection("teamroles").document(id).delete() { err in
+                        if let err = err {
+                            print("Error removing document: \(err)")
+                        } else {
+                            print("Document successfully removed!")
+                        }
+                    }
+                }
+            }
+        }
+        
+        Firestore.firestore().collection("roles").whereField("teamID", isEqualTo: teamId).getDocuments() {(querySnapshot,err) in
+            if err == nil{
+                for document in querySnapshot!.documents{
+                    print("have docs")
+                    let id=String(document.documentID)
+                    print(id)
+                    Firestore.firestore().collection("roles").document(id).delete() { err in
+                        if let err = err {
+                            print("Error removing document: \(err)")
+                        } else {
+                            print("Document successfully removed!")
+                        }
+                    }
+                }
+            }
+        }
+        
+        Firestore.firestore().collection("teams").document(teamId).delete() { err in
+            if let err = err {
+                print("Error removing document: \(err)")
+            } else {
+                print("Document successfully removed!")
+            }
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, commit editingStyle:
         UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
+            let teamid=String(myteamsList[indexPath.row].teamId)
+            deleteIt(teamId: teamid)
+            myteamsList.remove(at: indexPath.row)
+            self.tableView.reloadData()
         }
     }
 }

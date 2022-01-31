@@ -66,6 +66,7 @@ class RoleSelectViewController: UIViewController,UITableViewDelegate,UITableView
         print("3")
         cell = tableView.dequeueReusableCell(withIdentifier: "RoleCell", for: indexPath)
         cell.textLabel!.text=roleList[indexPath.row].roleName
+        cell.detailTextLabel!.text="Quantity needed: " + String(roleList[indexPath.row].roleQuantity)
         return cell
     }
     
@@ -107,9 +108,11 @@ class RoleSelectViewController: UIViewController,UITableViewDelegate,UITableView
                 } else {
                     db.collection("roles").document(self.roleList[indexPath.row].roleId).setData([ "roleQuantity": self.roleList[indexPath.row].roleQuantity-1], merge: true)
                     print("success")
-                    if let vc=self.storyboard?.instantiateViewController(withIdentifier: "TeamList") as? UserTeamViewController{
-                        self.navigationController?.pushViewController(vc, animated: true)
-                    }
+                    let storyboard=UIStoryboard(name: "ToMatcho", bundle: nil)
+                    let vc=storyboard.instantiateViewController(withIdentifier: "ToMatchoMain") as UIViewController
+                    self.view.window?.rootViewController=vc
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc,animated:true,completion: nil)
                 }
             }
         }))
