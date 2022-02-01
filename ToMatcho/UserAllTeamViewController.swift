@@ -24,8 +24,8 @@ class UserAllTeamViewController: UITableViewController {
                     var gameId = document.get("gameID") as! String
                     var createdBy = document.get("createdBy") as! String
                     var createdDate = document.get("createdDate") as! String
-                    
-                    self.appDelegate.teamList.append(Teams(teamname: teamName, teamid: docId, teamdesc: teamDesc, gameid: gameId, createdby: createdBy, createddate: createdDate))
+                    var ownerstatus = document.get("ownerStatus") as! String
+                    self.appDelegate.teamList.append(Teams(teamname: teamName, teamid: docId, teamdesc: teamDesc, gameid: gameId, createdby: createdBy, createddate: createdDate, ownerstatus: ownerstatus))
                 }
             }
             self.tableView.reloadData()
@@ -34,6 +34,7 @@ class UserAllTeamViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         loadData()
         tableView.reloadData()
     }

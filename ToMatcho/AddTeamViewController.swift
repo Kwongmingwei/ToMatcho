@@ -18,6 +18,7 @@ class AddTeamViewController: UIViewController,UITableViewDelegate,UITableViewDat
 
     
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var userid = Auth.auth().currentUser?.uid
 
     
     @IBOutlet weak var txtTeamName: UITextField!
@@ -118,16 +119,25 @@ class AddTeamViewController: UIViewController,UITableViewDelegate,UITableViewDat
                 "teamDescription": txtTeamDescription.text!,
                 "gameID": appDelegate.gameID,
                 "createdBy": String(uid!),
+                "ownerStatus": "",
                 "createdDate": dateFormatter.string(from: date) ])
+            print("Team added")
+            print(appDelegate.teamRolesList)
             for i in appDelegate.teamRolesList {
                 db.collection("roles").addDocument(data: [
                     "roleName": i.roleName,
                     "roleQuantity": i.roleQuantity,
                     "teamID": ref!.documentID])
                 }
+            print("Roles Added")
+            db.collection("joinedTeams").addDocument(data: [
+                "userID": userid!,
+                "teamID": ref!.documentID ])
+            appDelegate.teamRolesList = []
+            self.tabBarController?.selectedIndex = 1
             
         }
-        appDelegate.teamRolesList = []
+        
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle:

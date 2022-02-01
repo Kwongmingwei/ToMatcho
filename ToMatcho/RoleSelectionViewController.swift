@@ -99,7 +99,10 @@ class RoleSelectViewController: UIViewController,UITableViewDelegate,UITableView
                 "uInGameID":textFields[0].text!,
                 "roleName":self.roleList[indexPath.row].roleName,
                 "joinedon":date
-            ]) { [self] err in
+            ])
+            db.collection("joinedTeams").addDocument(data: [
+                "userID":String(Auth.auth().currentUser!.uid),
+                "teamID": self.teamid]){ [self] err in
                 if let err = err {
                     let alertView = UIAlertController(title: "Unsuccessful Action", message: "Error: "+err.localizedDescription, preferredStyle: UIAlertController.Style.alert)
                     alertView.addAction(UIAlertAction(title: "Try again", style: UIAlertAction.Style.default, handler: { _ in

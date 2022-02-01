@@ -31,7 +31,7 @@ class MyTeamsViewController: UITableViewController {
                     let createdDate = document.get("createdDate") as! String
                     //let developer=document.get("developer") as! String
                     //self.gameList.append(Game(gamename: gamename, gameId: docId,gameDev: developer))
-                    self.myteamsList.append(Teams(teamname: teamname, teamid: docId, teamdesc: teamdesc, gameid: gameid, createdby: createdby, createddate: createdDate))
+                    self.myteamsList.append(Teams(teamname: teamname, teamid: docId, teamdesc: teamdesc, gameid: gameid, createdby: createdby, createddate: createdDate, ownerstatus: ""))
                 }
             }
             print("myteams count:"+String(self.myteamsList.count))

@@ -29,9 +29,10 @@ class UserTeamViewController: UITableViewController {
                     let teamdesc = document.get("teamDescription") as! String
                     let createdby = document.get("createdBy") as! String
                     let createdDate = document.get("createdDate") as! String
+                    let ownerstatus = document.get("ownerStatus") as! String
                     //let developer=document.get("developer") as! String
                     //self.gameList.append(Game(gamename: gamename, gameId: docId,gameDev: developer))
-                    self.myteamsList.append(Teams(teamname: teamname, teamid: docId, teamdesc: teamdesc, gameid: gameid, createdby: createdby, createddate: createdDate))
+                    self.myteamsList.append(Teams(teamname: teamname, teamid: docId, teamdesc: teamdesc, gameid: gameid, createdby: createdby, createddate: createdDate, ownerstatus: ownerstatus))
                 }
             }
             print("myteams count:"+String(self.myteamsList.count))
@@ -40,8 +41,9 @@ class UserTeamViewController: UITableViewController {
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        super.viewDidLoad()
+        
         loadData()
         //tableView.reloadData()
     }

@@ -8,6 +8,7 @@ import UIKit
 import Foundation
 import Firebase
 import FirebaseFirestore
+import SwiftUI
 
 class UserAllGameViewController: UITableViewController {
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -35,6 +36,12 @@ class UserAllGameViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        if let promptClass = NSClassFromString("_UINavigationBarModernPromptView") as? UIAppearanceContainer.Type
+        {
+          UILabel.appearance(whenContainedInInstancesOf: [promptClass]).textColor = UIColor.white
+        }
+        navigationItem.prompt = NSLocalizedString("Navigation prompts appear at the top.", comment: "")
         loadData()
         tableView.reloadData()
     }
