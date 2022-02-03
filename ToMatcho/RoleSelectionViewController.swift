@@ -91,33 +91,39 @@ class RoleSelectViewController: UIViewController,UITableViewDelegate,UITableView
             dateformat.dateFormat = "dd/MM/yyyy"
             let date = dateformat.string(from: Date())
             guard let textFields = alertView.textFields else { return }
-            let db = Firestore.firestore()
-            db.collection("teamroles").addDocument(data: [
-                "teamid": self.teamid,
-                "roleid": self.roleList[indexPath.row].roleId,
-                "userid":String(Auth.auth().currentUser!.uid),
-                "uInGameID":textFields[0].text!,
-                "roleName":self.roleList[indexPath.row].roleName,
-                "joinedon":date
-            ])
-            db.collection("joinedTeams").addDocument(data: [
-                "userID":String(Auth.auth().currentUser!.uid),
-                "teamID": self.teamid]){ [self] err in
-                if let err = err {
-                    let alertView = UIAlertController(title: "Unsuccessful Action", message: "Error: "+err.localizedDescription, preferredStyle: UIAlertController.Style.alert)
-                    alertView.addAction(UIAlertAction(title: "Try again", style: UIAlertAction.Style.default, handler: { _ in
-                    }))
-                    self.present(alertView,animated: false,completion: nil)
-                } else {
-                    db.collection("roles").document(self.roleList[indexPath.row].roleId).setData([ "roleQuantity": self.roleList[indexPath.row].roleQuantity-1], merge: true)
-                    print("success")
-                    let storyboard=UIStoryboard(name: "ToMatcho", bundle: nil)
-                    let vc=storyboard.instantiateViewController(withIdentifier: "ToMatchoMain") as UIViewController
-                    self.view.window?.rootViewController=vc
-                    vc.modalPresentationStyle = .fullScreen
-                    self.present(vc,animated:true,completion: nil)
+            if (textFields[0].text!.replacingOccurrences(of: " ", with: "") == ""){
+                let alertView = UIAlertController(title: "Unsuccessful Action", message: "In Game User ID cannot be empty", preferredStyle: UIAlertController.Style.alert)
+                alertView.addAction(UIAlertAction(title: "Try again", style: UIAlertAction.Style.default, handler: { _ in
+                }))
+                self.present(alertView,animated: false,completion: nil)
+            }
+            else{
+                let db = Firestore.firestore()
+                db.collection("teamroles").addDocument(data: [
+                    "teamid": self.teamid,
+                    "roleid": self.roleList[indexPath.row].roleId,
+                    "userid":String(Auth.auth().currentUser!.uid),
+                    "uInGameID":textFields[0].text!,
+                    "roleName":self.roleList[indexPath.row].roleName,
+                    "joinedon":date
+                ]){ [self] err in
+                    if let err = err {
+                        let alertView = UIAlertController(title: "Unsuccessful Action", message: "Error: "+err.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+                        alertView.addAction(UIAlertAction(title: "Try again", style: UIAlertAction.Style.default, handler: { _ in
+                        }))
+                        self.present(alertView,animated: false,completion: nil)
+                    } else {
+                        db.collection("roles").document(self.roleList[indexPath.row].roleId).setData([ "roleQuantity": self.roleList[indexPath.row].roleQuantity-1], merge: true)
+                        print("success")
+                        let storyboard=UIStoryboard(name: "ToMatcho", bundle: nil)
+                        let vc=storyboard.instantiateViewController(withIdentifier: "ToMatchoMain") as UIViewController
+                        self.view.window?.rootViewController=vc
+                        vc.modalPresentationStyle = .fullScreen
+                        self.present(vc,animated:true,completion: nil)
+                    }
                 }
             }
+            
         }))
         self.present(alertView,animated: false,completion: nil)
     }

@@ -21,11 +21,10 @@ class UserAllTeamViewController: UITableViewController {
                     let teamName = document.get("teamName") as! String
                     let docId = document.documentID
                     let teamDesc = document.get("teamDescription") as! String
-                    var gameId = document.get("gameID") as! String
-                    var createdBy = document.get("createdBy") as! String
-                    var createdDate = document.get("createdDate") as! String
-                    var ownerstatus = document.get("ownerStatus") as! String
-                    self.appDelegate.teamList.append(Teams(teamname: teamName, teamid: docId, teamdesc: teamDesc, gameid: gameId, createdby: createdBy, createddate: createdDate, ownerstatus: ownerstatus))
+                    let gameId = document.get("gameID") as! String
+                    let createdBy = document.get("createdBy") as! String
+                    let createdDate = document.get("createdDate") as! String
+                    self.appDelegate.teamList.append(Teams(teamname: teamName, teamid: docId, teamdesc: teamDesc, gameid: gameId, createdby: createdBy, createddate: createdDate))
                 }
             }
             self.tableView.reloadData()

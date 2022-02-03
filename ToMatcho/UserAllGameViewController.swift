@@ -67,5 +67,19 @@ class UserAllGameViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         appDelegate.gameID = appDelegate.gameList[indexPath.row].gameid
     }
+    
+    @IBAction func logoutBtn(_ sender: Any) {
+        do {
+          try Auth.auth().signOut()
+            let storyboard=UIStoryboard(name: "Main", bundle: nil)
+            let vc=storyboard.instantiateViewController(withIdentifier: "MainInitialVC") as UIViewController
+            self.view.window?.rootViewController=vc
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc,animated:true,completion: nil)
+        } catch let signOutError as NSError {
+          print("Error signing out: %@", signOutError)
+        }
+    }
+    
 
 }

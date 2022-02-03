@@ -24,7 +24,6 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
     
     }
 
@@ -32,6 +31,7 @@ class RegisterViewController: UIViewController {
         loadingIndicator.isHidden=false
         loadingIndicator.startAnimating()
         errorFld.alpha=0
+        //errorFld.text=""
         let validation=isPasswordValid(password: pwdFld.text!, password2: pwdFld2.text!)
         if (validation=="valid"){
             Auth.auth().createUser(withEmail: emailFld.text!, password: pwdFld.text!, completion: {(result, err) in
@@ -62,9 +62,9 @@ class RegisterViewController: UIViewController {
                         }
                         else{
                             let alertView = UIAlertController(title: "Registration successful", message: "Registration successful, return to login screen to log in", preferredStyle: UIAlertController.Style.alert)
-                            alertView.addAction(UIAlertAction(title: "Return to Login", style: UIAlertAction.Style.default, handler: { _ in
+                            alertView.addAction(UIAlertAction(title: "Return", style: UIAlertAction.Style.default, handler: { _ in
                                 let storyboard=UIStoryboard(name: "Main", bundle: nil)
-                                let vc=storyboard.instantiateViewController(withIdentifier: "LoginVC") as UIViewController
+                                let vc=storyboard.instantiateViewController(withIdentifier: "MainInitialVC") as UIViewController
                                 vc.modalPresentationStyle = .fullScreen
                                 self.present(vc,animated:true,completion: nil)
                             }))
@@ -73,35 +73,6 @@ class RegisterViewController: UIViewController {
                             self.present(alertView,animated: false,completion: nil)
                         }
                     })
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    /*db.collection("users").addDocument(data: ["name":self.usrNameFld.text!,"uid":result!.user.uid], completion: {(error) in
-                        if error != nil{
-                            let alertView = UIAlertController(title: "Unsuccessful registration", message: "Error: "+error!.localizedDescription, preferredStyle: UIAlertController.Style.alert)
-                            alertView.addAction(UIAlertAction(title: "Try again", style: UIAlertAction.Style.default, handler: { _ in
-                                /*self.emailFld.text=""
-                                self.pwdFld.text=""
-                                self.pwdFld2.text=""*/
-                            }))
-                            self.present(alertView,animated: false,completion: nil)
-                        }
-                        else{
-                            let alertView = UIAlertController(title: "Registration successful", message: "Registration successful, return to login screen to log in", preferredStyle: UIAlertController.Style.alert)
-                            alertView.addAction(UIAlertAction(title: "Return to Login", style: UIAlertAction.Style.default, handler: { _ in
-                                let storyboard=UIStoryboard(name: "Main", bundle: nil)
-                                let vc=storyboard.instantiateViewController(withIdentifier: "LoginVC") as UIViewController
-                                vc.modalPresentationStyle = .fullScreen
-                                self.present(vc,animated:true,completion: nil)
-                            }))
-                            self.present(alertView,animated: false,completion: nil)
-                        }
-                    })*/
-                    
                 }
             })
         }
@@ -109,9 +80,15 @@ class RegisterViewController: UIViewController {
             errorFld.alpha=1
             if (validation=="nomatch"){
                 errorFld.text="Passwords do not match!"
+                self.loadingIndicator.stopAnimating()
+                self.loadingIndicator.isHidden=true
+                
+                
             }
             else if (validation=="novalid"){
                 errorFld.text="Passwords must contain at least one special character and is 6 character long"
+                self.loadingIndicator.stopAnimating()
+                self.loadingIndicator.isHidden=true
             }
         }
     }

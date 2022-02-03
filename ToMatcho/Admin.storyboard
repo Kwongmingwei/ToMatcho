@@ -96,7 +96,7 @@
                                             <constraint firstAttribute="height" constant="30" id="REs-2E-dyF"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Game Developer" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="00O-7E-nGS">
                                         <rect key="frame" x="0.0" y="60" width="374" height="30"/>
@@ -104,7 +104,7 @@
                                             <constraint firstAttribute="height" constant="30" id="awS-P3-h3z"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ozv-E2-5f8">
                                         <rect key="frame" x="0.0" y="120" width="374" height="240.5"/>

@@ -14,15 +14,13 @@ class Teams{
     var gameId:String
     var createdBy:String
     var createdDate:String
-    var ownerStatus:String
     
-    init(teamname:String,teamid:String,teamdesc:String,gameid:String,createdby:String,createddate:String,ownerstatus:String) {
+    init(teamname:String,teamid:String,teamdesc:String,gameid:String,createdby:String,createddate:String) {
         teamName = teamname
         teamId = teamid
         teamDesc = teamdesc
         gameId=gameid
         createdBy=createdby
         createdDate=createddate
-        ownerStatus=ownerstatus
     }
 }

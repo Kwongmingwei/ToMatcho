@@ -29,10 +29,9 @@ class UserTeamViewController: UITableViewController {
                     let teamdesc = document.get("teamDescription") as! String
                     let createdby = document.get("createdBy") as! String
                     let createdDate = document.get("createdDate") as! String
-                    let ownerstatus = document.get("ownerStatus") as! String
                     //let developer=document.get("developer") as! String
                     //self.gameList.append(Game(gamename: gamename, gameId: docId,gameDev: developer))
-                    self.myteamsList.append(Teams(teamname: teamname, teamid: docId, teamdesc: teamdesc, gameid: gameid, createdby: createdby, createddate: createdDate, ownerstatus: ownerstatus))
+                    self.myteamsList.append(Teams(teamname: teamname, teamid: docId, teamdesc: teamdesc, gameid: gameid, createdby: createdby, createddate: createdDate))
                 }
             }
             print("myteams count:"+String(self.myteamsList.count))
