@@ -16,38 +16,66 @@ class MyTeamsViewController: UITableViewController {
     var myteamsList:[Teams]=[]
     var userid = Auth.auth().currentUser?.uid
     
-    func loadData(){
-        Firestore.firestore().collection("teams").whereField("createdBy", isEqualTo: userid!).getDocuments() {(querySnapshot,err) in
-            if err == nil{
-                print("b4 myteams count:"+String(self.myteamsList.count))
-                self.myteamsList.removeAll()
-                for document in querySnapshot!.documents{
-                    print("+1")
-                    let docId=document.documentID
-                    let teamname=document.get("teamName") as! String
-                    let gameid = document.get("gameID") as! String
-                    let teamdesc = document.get("teamDescription") as! String
-                    let createdby = document.get("createdBy") as! String
-                    let createdDate = document.get("createdDate") as! String
-                    //let developer=document.get("developer") as! String
-                    //self.gameList.append(Game(gamename: gamename, gameId: docId,gameDev: developer))
-                    self.myteamsList.append(Teams(teamname: teamname, teamid: docId, teamdesc: teamdesc, gameid: gameid, createdby: createdby, createddate: createdDate))
+    func TeamExist(teamid:String,list:[Teams])->Int {
+
+            for t in list {
+                let id = t.teamId
+                if (id == teamid) {
+                    return 1
                 }
             }
-            print("myteams count:"+String(self.myteamsList.count))
-            self.tableView.reloadData()
+        return 0
+    }
+        
+    func loadData(){
+        myteamsList.removeAll()
+        Firestore.firestore().collection("teamroles").whereField("userid", isEqualTo: userid!).getDocuments() {(querySnapshot,err) in
+            if err == nil{
+                //print("b4 myteams count:"+String(self.myteamsList.count))
+                for document in querySnapshot!.documents{
+                    //print("+1")
+                    let teamid=document.get("teamid") as! String
+                    print(String(teamid))
+                    Firestore.firestore().collection("teams").document(teamid).getDocument { [self] (document, error) in
+                        if let document = document, document.exists {
+                            let teamname = document.get("teamName") as! String
+                            let teamdesc = document.get("teamDescription") as! String
+                            let gameid = document.get("gameID") as! String
+                            let createdby = document.get("createdBy") as! String
+                            let createdDate = document.get("createdDate") as! String
+                            print ("added")
+                            let exist = TeamExist(teamid: teamid, list: self.myteamsList)
+                            if (exist==0){
+                                self.myteamsList.append(Teams(teamname: teamname, teamid: teamid, teamdesc: teamdesc, gameid: gameid, createdby: createdby, createddate: createdDate))
+                            }
+                            
+                            print("teamciunt" + String(self.myteamsList.count))
+                            self.tableView.reloadData()
+                            print("reload data1")
+                        } else {
+                            print("Document does not exist")
+                        }
+                    }
+                }
+                
+                self.tableView.reloadData()
+            }
         }
     }
     
-    override func viewDidLoad() {
+    
+    override func viewDidLoad(){
         super.viewDidLoad()
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        loadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         loadData()
+        self.tableView.reloadData()
+        print("reload data2")
+        
+        
     }
     
     
@@ -58,15 +86,17 @@ class MyTeamsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("tv count" + String(myteamsList.count))
         return myteamsList.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell=self.tableView.dequeueReusableCell(withIdentifier: "MyTeamCell", for: indexPath)
+        let cell=tableView.dequeueReusableCell(withIdentifier: "MyTeamCell", for: indexPath)
         let team=myteamsList[indexPath.row]
         cell.textLabel!.textColor = UIColor.white
         cell.textLabel!.text = "\(team.teamName)"
         cell.detailTextLabel!.text = "Created On \(team.createdDate)"
         cell.detailTextLabel!.textColor = UIColor.white
+        print("Cell")
         return cell
     }
     
@@ -124,9 +154,25 @@ class MyTeamsViewController: UITableViewController {
         UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
             let teamid=String(myteamsList[indexPath.row].teamId)
-            deleteIt(teamId: teamid)
-            myteamsList.remove(at: indexPath.row)
-            self.tableView.reloadData()
+            let teamowner = String(myteamsList[indexPath.row].createdBy)
+            if (teamowner == self.userid){
+                let alertView = UIAlertController(title: "Delete team", message: "Deleting team will delete it forever. Are you sure?", preferredStyle: UIAlertController.Style.alert)
+                alertView.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: { _ in
+                }))
+                alertView.addAction(UIAlertAction(title: "Delete", style: UIAlertAction.Style.default, handler: { _ in
+                    self.deleteIt(teamId: teamid)
+                    self.loadData()
+                    self.tableView.reloadData()
+                }))
+                self.present(alertView,animated: false,completion: nil)
+            }
+            else{
+                let alertView = UIAlertController(title: "Error!", message: "Error: "+"You do not have permission to delete this team", preferredStyle: UIAlertController.Style.alert)
+                alertView.addAction(UIAlertAction(title: "Return", style: UIAlertAction.Style.default, handler: { _ in
+                }))
+                self.present(alertView,animated: false,completion: nil)
+            }
+            
         }
     }
 }

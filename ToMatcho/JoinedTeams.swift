@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+/*
 class JoinedTeams {
     var userId:String
     var teamId:String
@@ -16,3 +16,4 @@ class JoinedTeams {
         teamId = teamid
     }
 }
+*/

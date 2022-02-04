@@ -113,13 +113,13 @@ class AddTeamViewController: UIViewController,UITableViewDelegate,UITableViewDat
             dateFormatter.dateFormat = "dd/MM/yyyy"
             print(dateFormatter.string(from: date))
             var ref: DocumentReference? = nil
+            var ref2: DocumentReference? = nil
             print(dateFormatter.string(from: date))
             ref = db.collection("teams").addDocument(data: [
                 "teamName": txtTeamName.text!,
                 "teamDescription": txtTeamDescription.text!,
                 "gameID": appDelegate.gameID,
                 "createdBy": String(uid!),
-                "ownerStatus": "",
                 "createdDate": dateFormatter.string(from: date) ])
             print("Team added")
             print(appDelegate.teamRolesList)
@@ -130,9 +130,19 @@ class AddTeamViewController: UIViewController,UITableViewDelegate,UITableViewDat
                     "teamID": ref!.documentID])
                 }
             print("Roles Added")
-            db.collection("joinedTeams").addDocument(data: [
-                "userID": userid!,
-                "teamID": ref!.documentID ])
+            let teamid = ref!.documentID
+            ref2 = db.collection("roles").addDocument(data: [
+                "roleName": "Owner",
+                "roleQuantity": 0,
+                "teamID": teamid])
+            db.collection("teamroles").addDocument(data: [
+                "teamid": teamid,
+                "roleid": String(ref2!.documentID),
+                "userid":String(Auth.auth().currentUser!.uid),
+                "uInGameID":"Owner",
+                "roleName":"Owner",
+                "joinedon":dateFormatter.string(from: date)
+            ])
             appDelegate.teamRolesList = []
             self.tabBarController?.selectedIndex = 1
             
