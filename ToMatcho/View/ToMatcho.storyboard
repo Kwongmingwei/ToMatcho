@@ -37,11 +37,12 @@
                     <connections>
                         <segue destination="0GC-6Z-LqX" kind="relationship" relationship="viewControllers" id="8Y0-bE-vY2"/>
                         <segue destination="dMD-li-yYc" kind="relationship" relationship="viewControllers" id="gsf-Iy-F8C"/>
+                        <segue destination="PNA-4X-UnY" kind="relationship" relationship="viewControllers" id="mJb-o9-xz1"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yK6-Yp-khC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="71.651785714285708"/>
+            <point key="canvasLocation" x="-338" y="826"/>
         </scene>
         <!--Games-->
         <scene sceneID="EJX-0Y-bsd">
@@ -128,6 +129,71 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="srS-aP-miA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4825" y="2160"/>
+        </scene>
+        <!--Joined Teams-->
+        <scene sceneID="sY2-8C-Vsb">
+            <objects>
+                <tableViewController id="Nv2-07-eVP" customClass="JoinedTeamViewController" customModule="ToMatcho" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Ojg-bH-sO7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" red="0.59999999999999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="joinTeamCell" textLabel="Hbv-JE-W1b" detailTextLabel="T3o-di-81b" style="IBUITableViewCellStyleSubtitle" id="SzR-gf-A5N">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SzR-gf-A5N" id="p7H-P9-3a2">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hbv-JE-W1b">
+                                            <rect key="frame" x="20" y="4" width="31.5" height="19.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="T3o-di-81b">
+                                            <rect key="frame" x="20" y="23.5" width="50" height="17"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Nv2-07-eVP" id="c9G-HE-UzK"/>
+                            <outlet property="delegate" destination="Nv2-07-eVP" id="nMz-bo-T39"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Joined Teams" id="NBD-Sc-vzf"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RNb-Eu-jQg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1864" y="1574"/>
+        </scene>
+        <!--Joined Teams-->
+        <scene sceneID="LrB-7x-tAX">
+            <objects>
+                <navigationController id="PNA-4X-UnY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Joined Teams" image="person.2.fill" catalog="system" selectedImage="person.2.fill" id="z9C-ww-844"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="O8d-cy-lvl">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Nv2-07-eVP" kind="relationship" relationship="rootViewController" id="5Bs-bh-9jy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vZp-AW-jd4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="857" y="1574"/>
         </scene>
         <!--My Teams-->
         <scene sceneID="oY4-47-oon">
@@ -582,7 +648,6 @@
         <!--Join Team-->
         <scene sceneID="qKu-bp-szg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="y0z-0R-gbk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="pAC-gz-tjP" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x8p-vs-FOC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -703,6 +768,7 @@
                         <outlet property="roleTableView" destination="VAo-9V-bVL" id="leF-X4-gMJ"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y0z-0R-gbk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4059" y="2160"/>
         </scene>
@@ -817,6 +883,7 @@
     <resources>
         <image name="gamecontroller.fill" catalog="system" width="128" height="80"/>
         <image name="person.2.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="person.2.fill" catalog="system" width="128" height="80"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
