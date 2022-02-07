@@ -126,7 +126,7 @@ class AddTeamViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         else{
             if appDelegate.teamRolesList.count == 0 {
-                let alertView = UIAlertController(title: "Empty roles", message: "Roles cannot be empty", preferredStyle: UIAlertController.Style.alert)
+                let alertView = UIAlertController(title: "No roles added", message: "Team must have at least 1 role added", preferredStyle: UIAlertController.Style.alert)
                 alertView.addAction(UIAlertAction(title: "Return", style: UIAlertAction.Style.default, handler: { _ in
                 }))
                 self.present(alertView,animated: false,completion: nil)
@@ -134,14 +134,14 @@ class AddTeamViewController: UIViewController,UITableViewDelegate,UITableViewDat
             else {
                 print("test2")
                 var username:String = ""
-                let alertController = UIAlertController(title: "Add Username",
+                let alertController = UIAlertController(title: "Add your in game user id",
                                                             message: nil,
                                                             preferredStyle: .alert)
                     
                     self.present(alertController,
                                  animated: true)
                 alertController.addTextField { (textField) in
-                    textField.placeholder = "userame"
+                    textField.placeholder = "user id/username"
                 }
                 let cancelAction = UIAlertAction(title: "Cancel",
                                                    style: .default) { [weak alertController] _ in

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1D7C28FD279150470040588E /* ToMatcho.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D7C28FC279150470040588E /* ToMatcho.storyboard */; };
-		1D96681E27A82F55000A66EA /* JoinedTeams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D96681D27A82F55000A66EA /* JoinedTeams.swift */; };
 		1DAF580A27A12AC600DD373C /* UserAllGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF580927A12AC600DD373C /* UserAllGameViewController.swift */; };
 		1DAF580C27A138F200DD373C /* AddTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF580B27A138F200DD373C /* AddTeamViewController.swift */; };
 		1DAF581027A161A700DD373C /* AddTeamRolesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF580F27A161A700DD373C /* AddTeamRolesViewController.swift */; };
@@ -63,7 +62,6 @@
 
 /* Begin PBXFileReference section */
 		1D7C28FC279150470040588E /* ToMatcho.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ToMatcho.storyboard; sourceTree = "<group>"; };
-		1D96681D27A82F55000A66EA /* JoinedTeams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinedTeams.swift; sourceTree = "<group>"; };
 		1DAF580927A12AC600DD373C /* UserAllGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAllGameViewController.swift; sourceTree = "<group>"; };
 		1DAF580B27A138F200DD373C /* AddTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeamViewController.swift; sourceTree = "<group>"; };
 		1DAF580F27A161A700DD373C /* AddTeamRolesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTeamRolesViewController.swift; sourceTree = "<group>"; };
@@ -201,20 +199,27 @@
 				B40B365327AD185200F57ABD /* Model */,
 				B4311EBA27911D6F000EC348 /* AppDelegate.swift */,
 				B4311EBC27911D6F000EC348 /* SceneDelegate.swift */,
-				B4311EBE27911D6F000EC348 /* ViewController.swift */,
-				1D96681D27A82F55000A66EA /* JoinedTeams.swift */,
-				1DAF580F27A161A700DD373C /* AddTeamRolesViewController.swift */,
-				1DAF581327A16C4B00DD373C /* TeamRolesController.swift */,
-				1DAF581527A18A8E00DD373C /* AddTeamTableViewController.swift */,
-				B447E8E82796B5FF0000E862 /* TestViewController.swift */,
 				B4311EC627911D71000EC348 /* Assets.xcassets */,
 				B4F3EE0C27A162B800A54FA4 /* icon (1).png */,
 				B447E8E227968A570000E862 /* GoogleService-Info.plist */,
 				B4311EC827911D71000EC348 /* LaunchScreen.storyboard */,
 				B4311ECB27911D71000EC348 /* Info.plist */,
 				B4311EC327911D6F000EC348 /* ToMatcho.xcdatamodeld */,
+				B4743D8327B0AA1C00733CC5 /* Unused */,
 			);
 			path = ToMatcho;
+			sourceTree = "<group>";
+		};
+		B4743D8327B0AA1C00733CC5 /* Unused */ = {
+			isa = PBXGroup;
+			children = (
+				B4311EBE27911D6F000EC348 /* ViewController.swift */,
+				1DAF580F27A161A700DD373C /* AddTeamRolesViewController.swift */,
+				1DAF581327A16C4B00DD373C /* TeamRolesController.swift */,
+				1DAF581527A18A8E00DD373C /* AddTeamTableViewController.swift */,
+				B447E8E82796B5FF0000E862 /* TestViewController.swift */,
+			);
+			path = Unused;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,7 +370,6 @@
 				B42894B127A0F43600FB8403 /* AddGameViewController.swift in Sources */,
 				1DAF580C27A138F200DD373C /* AddTeamViewController.swift in Sources */,
 				7B90B4C727A586B900E8E680 /* UserAllTeamViewController.swift in Sources */,
-				1D96681E27A82F55000A66EA /* JoinedTeams.swift in Sources */,
 				1DAF581227A161F900DD373C /* TeamRoles.swift in Sources */,
 				B43E934E279D2105006DE37C /* AllGameViewController.swift in Sources */,
 				1DAF581627A18A8E00DD373C /* AddTeamTableViewController.swift in Sources */,
