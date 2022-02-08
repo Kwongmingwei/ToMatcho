@@ -11,3 +11,6 @@ Tired of playing games alone? Unable to clear a game by yourself? Not being able
 **View joined teams** – View all your created and joined teams. Start adding your teammates in game and start playing together. 
 
 ## App Screenshots
+### Login Page
+![Alt text](https://i.imgur.com/9U40XTh.png)
+The login page allows both users and admins of the app to login to use the features of the app. The fields entered will be validated and checked against the database and an error will prompt if details entered does not exist or is wrong. 
